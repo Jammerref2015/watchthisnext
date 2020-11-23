@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for movie in movies %}
+
+    {{ movies.title }}<br>
+    {{ movies.synopsis }}<br>
+    {{ movies.genre }}<br>
+    {{ movies.platform }}<br>
+    {{ movies.rating}}<br>
+    {{ movies.release_year}}<br>
+    {{ movies.age_rating}}<br>
+    {{ movies.movie_image}}<br>
+
+{% endfor %}
+
+{% endblock %}
+    
