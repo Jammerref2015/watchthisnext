@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<h1 class="addMovieHeaderStyling"> Add a movie </h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="row">
+			<form class="col s12 z-depth-5 addMovieForm">
+				<div class="row">
+					<div class="input-field col s12">
+						<input placeholder = "Name of the movie." value = "" class="title" id = "title"
+                     type = "text" name="title" />
+						<label for = "title">Title</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input placeholder = "Add a synopsis here. So we know what the movie is about." value = "" class="synopsis" id = "synopsis"
+                     type = "text" name="synopsis" minlength="5"
+                            maxlength="30" />
+						<label for = "title">Synopsis</label>
+					</div>
+				</div>
+                <div class="row">
+				<div class="input-field col s12">
+					<select>
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">Action</option>
+                        <option value="2">War</option>
+                        <option value="3">Romance</option>
+                        <option value="4">Musical</option>
+                        <option value="5">Horror</option>
+                        <option value="6">Western</option>
+                        <option value="7">Thriller</option>
+                        <option value="8">Sci-Fi</option>
+                        <option value="9">Crime</option>
+                        <option value="10">Comedy</option>
+                        <option value="11">Documentry</option>
+                        <option value="12">Fantasy</option>
+                    </select>
+					<label>What genre is the movie?</label>
+				</div>
+                </div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input placeholder = "What platform did you see the movie on? Netflix? DVD?" value = "" class="platform" id = "platform"
+                     type = "text" name="platform"/>
+						<label for = "title">Platform</label>
+					</div>
+				</div>
+                <div class="row">
+					<div class="input-field col s12">
+						<input placeholder = "rating" value = "" class="rating" id = "rating"
+                     type = "text" name="rating"/>
+						<label for = "title">Rating. To be replaced with stars.</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" class="datepicker">
+						<label for = "comments">When was the movie released?</label>
+					</div>
+				</div>
+
+                <div class="row">
+					<div class="input-field col s12">
+						<input placeholder = "What age rating does the movie have?" value = "" class="ageRating" id = "ageRating"
+                     type = "text" name="ageRating" />
+						<label for = "title">Age Rating</label>
+					</div>
+				</div>
+
+                <div class="row">
+					<div class="input-field col s12">
+						<input placeholder = "Add a movie poster image here!" value = "" class="movieImage" id = "movieImage"
+                     type = "text" name="movieImage"/>
+						<label for = "title">Movie poster URL:</label>
+					</div>
+				</div>
+
+                <div class="row">
+					<div class="input-field col s12">
+						<button type="submit" class="btn-large waves-light darken-1 text-shadow">
+                        Add movie </button>
+					</div>
+				</div>
+
+			
+
+            
+
+				
+			</form>
+		</div>
+	</div>
+
+	{% endblock %}
