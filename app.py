@@ -28,11 +28,6 @@ def get_movies():
     return render_template("movies.html", movies=movies)
 
 
-@app.route("/addmovie")
-def addmovie():
-    return render_template("addmovie.html")
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -75,6 +70,27 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/addmovie", methods=["GET", "POST"])
+def addmovie():
+    if request.method == "POST":
+        movie = {
+            "title": request.form.get("title"),
+            "synopsis": request.form.get("synopsis"),
+            "genre": request.form.get("genre"),
+            "platform": request.form.get("platform"),
+            "rating": request.form.get("rating"),
+            "release_year": request.form.get("release_year"),
+            "ageRating": request.form.get("ageRating"),
+            "movie_image": request.form.get("movie_image"),
+            "created_by": session["user"]
+        }
+        mongo.db.movies.insert_one(movie)
+        flash("Movie Successfully Added!!!")
+        return redirect(url_for("addmovie"))
+
+    return render_template("addmovie.html")
 
 
 if __name__ == "__main__":
