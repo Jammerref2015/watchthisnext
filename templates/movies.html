@@ -1,16 +1,47 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for movie in movies %}
-    {{ movie.title }}<br>
-    {{ movie.synopsis }}<br>
-    {{ movie.genre }}<br>
-    {{ movie.platform }}<br>
-    {{ movie.rating}}<br>
-    {{ movie.release_year}}<br>
-    {{ movie.age_rating}}<br>
-    {{ movie.movie_image}}<br>
-{% endfor %}
+<div class="row card-panel grey lighten-5">
+    <form action="#" method="post" class="col s12">
+        <div class="row valign-wrapper center-align">
+            <div class="input-field col s12 m8">
+                <input type="text" name="" id="query" class="validate">
+                <label for="query">Search</label>
+            </div>
+        </div>
+    </form>
+</div>
 
-{% endblock %}
+<div class="row">
+  <div class="col s12 m7">
+  {% for movie in movies %}
+    <div class="card">
+      <div class="card-image movie-image">
+      <img src="{{ movie.movie_image }}"  alt="movie poster image">
+        
+        <span class="card-title">{{ movie.title }}</span>
+      </div>
+      <div class="card-content">
+      
+        <li>
+        <p>{{ movie.title }}</p>
+        <p>{{ movie.synopsis }}</p>
+        <p>{{ movie.genre }}</p>
+        <p>{{ movie.platform }}</p>
+        <p>{{ movie.rating}}</p>
+        <p>{{ movie.release_year}}</p>
+        <p>{{ movie.age_rating}}</p>
+        <p>{{ movie.movie_image}}</p>
+
+        </li>
+        
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
     
+{% endblock %}
