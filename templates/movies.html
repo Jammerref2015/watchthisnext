@@ -17,12 +17,10 @@
   {% for movie in movies %}
     <div class="card">
       <div class="card-image movie-image">
-      <img src="{{ movie.movie_image }}"  alt="movie poster image">
-        
+      <img src="{{ movie.movie_image }}"  alt="movie poster image"> 
         <span class="card-title">{{ movie.title }}</span>
       </div>
       <div class="card-content">
-      
         <li>
         <p>{{ movie.title }}</p>
         <p>{{ movie.synopsis }}</p>
@@ -31,17 +29,23 @@
         <p>{{ movie.rating}}</p>
         <p>{{ movie.release_year}}</p>
         <p>{{ movie.age_rating}}</p>
+        <!-- Add CSS to prevent displaying URL -->
         <p class="hidePosterURL">{{ movie.movie_image}}</p>
-
-        </li>
-        
+        </li> 
       </div>
       <div class="card-action">
-        <a href="#">This is a link</a>
+        {% if session.user %}
+            <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                <a href="#" class="brand-logo">Edit rating.</a>
+            </button>
+        {% else %}  
+            <button type="submit" class="btn-large light-blue darken-1 text-shadow"  disabled>
+                <a href="#" class="brand-logo" >Log in or sign up to rate movie.</a>
+            </button>
+        {% endif %}
       </div>
     </div>
     {% endfor %}
   </div>
 </div>
-    
 {% endblock %}

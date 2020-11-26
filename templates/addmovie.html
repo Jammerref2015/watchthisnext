@@ -32,7 +32,7 @@
 					<div class="input-field col s12">
 						<input placeholder = "Genre! Is it a Comedy? Horror? Drama?" value = "" class="genre" id = "genre"
                      type = "text" name="genre" minlength="5"
-                            maxlength="30"/>
+                            maxlength="30" required/>
                         <label for = "genre">Genre</label>
 					</div>
 				</div>
@@ -72,16 +72,17 @@
                      type = "text" name="movie_image"/>
 						<label for = "movie_image">Movie poster URL:</label>
 					</div>
-				</div>
+				</div> 
 
                 <div class="row">
 					<div class="col s12 center-align">
-						<button type="submit" class="btn-large waves-light darken-1 text-shadow">
+						<button type="submit" class="btn-large waves-light darken-4 text-shadow">
                         Add movie </button>
 					</div>
 				</div>
-			</form>
+			
 		</div>
+        </form>
 	</div>
 
 	{% endblock %}
