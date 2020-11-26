@@ -14,17 +14,17 @@
 				<div class="row">
 					<div class="input-field col s12">
 						<input placeholder = "Name of the movie." value = "" class="title" id = "title"
-                     type = "text" name="title" />
+                     type = "text" name="title" required/>
 						<label for = "title">Title</label>
 					</div>
 				</div>
                 <!-- Synopsis -->
 				<div class="row">
 					<div class="input-field col s12">
-						<textarea placeholder = "Add a synopsis here. So we know what the movie is about." value = "" class="materialize-textarea synopsis" id = "synopsis"
+						<textarea  value = "" class="materialize-textarea synopsis" id = "synopsis"
                      type = "text" name="synopsis" minlength="5"
-                            maxlength="240"> </textarea>
-						<label for = "synopsis">Synopsis</label>         
+                            maxlength="240" required> </textarea>
+						<label for = "synopsis">Synopsis - Tell us what the movie is about.</label>         
 					</div>
 				</div>
                 <!-- Genre -->
@@ -32,7 +32,7 @@
 					<div class="input-field col s12">
 						<input placeholder = "Genre! Is it a Comedy? Horror? Drama?" value = "" class="genre" id = "genre"
                      type = "text" name="genre" minlength="5"
-                            maxlength="30" />
+                            maxlength="30"/>
                         <label for = "genre">Genre</label>
 					</div>
 				</div>
@@ -40,7 +40,7 @@
 				<div class="row">
 					<div class="input-field col s12">
 						<input placeholder = "What platform did you see the movie on? Netflix? DVD?" value = "" class="platform" id = "platform"
-                     type = "text" name="platform"/>
+                     type = "text" name="platform" />
 						<label for = "platform">Platform</label>
 					</div>
 				</div>
@@ -48,14 +48,12 @@
                 <div class="row">
 					<div class="input-field col s12">
 						<input placeholder = "Rate the movie! 5 is great! 1 is not so great!" value = "" class="rating" id = "rating"
-                     type = "text" name="rating"/>
-						<label for = "rating">Rating</label>
-					</div>
+                     type = "text" name="rating" required/>
 				</div>
                 <!-- Release year-->
 				<div class="row">
 					<div class="input-field col s12">
-						<input type="text" name="release_year" class="datepicker" placeholder="When was the movie released?">
+						<input type="text" name="release_year" class="datepicker" placeholder="When was the movie released?" >
 						<label for = "release_year">Release Year</label>
 					</div>
 				</div>
@@ -63,7 +61,7 @@
                 <div class="row">
 					<div class="input-field col s12">
 						<input placeholder = "What age rating does the movie have?" value = "" class="ageRating" id = "ageRating"
-                     type = "text" name="ageRating" />
+                     type = "text" name="ageRating"  />
 						<label for = "ageRating">Age Rating</label>
 					</div>
 				</div>
