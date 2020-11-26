@@ -93,6 +93,13 @@ def addmovie():
     return render_template("addmovie.html")
 
 
+@app.route("/logout")
+def logout():
+    flash("I used to hate the water. I can't imagine why. - Jaws")
+    session.pop("user")
+    return redirect(url_for('login'))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
