@@ -82,11 +82,16 @@ def addmovie():
             "platform": request.form.get("platform"),
             "rating": request.form.get("rating"),
             "release_year": request.form.get("release_year"),
-            "ageRating": request.form.get("ageRating"),
+            "age_rating": request.form.get("age_rating"),
             "movie_image": request.form.get("movie_image"),
             "created_by": session["user"]
         }
+        rating = {
+            "rating": request.form.get("rating"),
+            "review": request.form.get("review")
+        }
         mongo.db.movies.insert_one(movie)
+        mongo.db.ratings.insert_one(rating)
         flash("Movie Successfully Added!!!")
         return redirect(url_for("addmovie"))
 
