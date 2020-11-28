@@ -59,3 +59,9 @@ body{
 .hidePosterURL {
     display: none;
 }
+
+/* Center movie details in cards */
+.cardDetails {
+    text-align: center;
+    font-size: 100%;
+}

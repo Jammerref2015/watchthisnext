@@ -18,7 +18,7 @@
 		{% for movie in movies %}
 		<div class="card">
 			<div class="card-image movie-image">
-				<img src="{{ movie.movie_image }}"  alt="movie poster image">
+				<a href="{{url_for('movie', movie_id=movie._id)}}"> <img src="{{ movie.movie_image }}"  alt="movie poster image"> </a>
 				<span class="card-title">{{ movie.title }}</span>
 			</div>
 			<div class="card-content">
@@ -31,8 +31,8 @@
 					<p>{{ movie.release_year}}</p>
 					<p>{{ movie.age_rating}}</p>
 					<p>Movie added by: {{ movie.created_by}}</p>
-					{% for movie in ratings %}
-					<p>text:{{ movie.review}}</p>
+					{% for rating in ratings %}
+					<p>text:{{ rating.review}}</p>
 					{% endfor %}
 					<!-- Add CSS to prevent displaying URL -->
 					<p class="hidePosterURL">{{ movie.movie_image}}</p>
