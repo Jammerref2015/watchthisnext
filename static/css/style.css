@@ -14,6 +14,10 @@ body{
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+.hidePosterURL{
+    display: none;
+}
+
 /* Styling shadow on form */
 .addMovieForm {
     border-radius: 2%;    
@@ -30,38 +34,32 @@ body{
     height: 50%;
 }
 
-
-.stars-outer {
-  display: inline-block;
-  position: relative;
-  font-family: FontAwesome;
-}
- 
-.stars-outer::before {
-  content: "\f006 \f006 \f006 \f006 \f006";
-}
- 
-.stars-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-}
- 
-.stars-inner::before {
-  content: "\f005 \f005 \f005 \f005 \f005";
-  color: #f8ce0b;
+.stars {
+    display: inline-block;
 }
 
-/* Styling to hide URL from movie list */
-.hidePosterURL {
+.stars input {
     display: none;
 }
 
-/* Center movie details in cards */
-.cardDetails {
-    text-align: center;
-    font-size: 100%;
+.stars label {
+    float: right;
+    padding: 2px;
+    font-size: 24px;
+    color: #444;
+    transition: all .2s;
 }
+
+.stars label:before {
+    content: '\2605';
+}
+
+.stars input:checked ~ label:before {
+    color: gold;
+    transition: all .25s;
+}
+
+.stars label:hover {
+    transform: scale(1.3);
+}
+

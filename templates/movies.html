@@ -1,56 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row card-panel grey lighten-5">
-	<form action="#" method="post" class="col s12">
-		<div class="row valign-wrapper center-align">
-			<div class="input-field col s12 m8">
-				<input type="text" name="" id="query" class="validate">
-				<label for="query">Search</label>
-			</div>
-		</div>
-	</form>
-</div>
 
 
-<div class="row">
-	<div class="col s12 m7">
-		{% for movie in movies %}
-		<div class="card">
-			<div class="card-image movie-image">
-				<a href="{{url_for('movie', movie_id=movie._id)}}"> <img src="{{ movie.movie_image }}"  alt="movie poster image"> </a>
-				<span class="card-title">{{ movie.title }}</span>
+	<div class="row card-panel grey lighten-5">
+		<form action="#" method="post" class="col s12">
+			<div class="row valign-wrapper center-align">
+				<div class="input-field col s12 m8">
+					<input type="text" name="" id="query" class="validate">
+					<label for="query">Search</label>
+				</div>
 			</div>
-			<div class="card-content">
-				<li>
-					<p>{{ movie.title }}</p>
-					<p>{{ movie.synopsis }}</p>
-					<p>{{ movie.genre }}</p>
-					<p>{{ movie.platform }}</p>
-					<p>{{ movie.rating}}</p>
-					<p>{{ movie.release_year}}</p>
-					<p>{{ movie.age_rating}}</p>
-					<p>Movie added by: {{ movie.created_by}}</p>
-					{% for rating in ratings %}
-					<p>text:{{ rating.review}}</p>
-					{% endfor %}
-					<!-- Add CSS to prevent displaying URL -->
-					<p class="hidePosterURL">{{ movie.movie_image}}</p>
-				</li>
-			</div>
-			<div class="card-action">
-				{% if session.user %}
-				<button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                <a href="#" class="brand-logo">Edit rating.</a>
-            </button>
-				{% else %}
-				<button type="submit" class="btn-large light-blue darken-1 text-shadow"  disabled>
-                <a href="#" class="brand-logo" >Log in or sign up to rate movie.</a>
-            </button>
-				{% endif %}
-			</div>
-		</div>
-		{% endfor %}
+		</form>
 	</div>
-</div>
-{% endblock %}
+
+	<div class="row">
+
+	</div>
+
+
+	<div class="row">
+		<div class="col s12 m7">
+			{% for movie in movies %}
+			<div class="card">
+				<div class="card-image movie-image">
+					<a href="{{url_for('movie', movie_id=movie._id)}}">
+						<img src="{{ movie.movie_image }}"  alt="movie poster image"> </a>
+						<span class="card-title">{{ movie.title }}</span>
+				</div>
+				<div class="card-content">
+					<li>
+						
+						<p>{{ movie.age_rating}}</p>
+						<p>Movie added by: {{ movie.created_by}}</p>
+                        <p>Your rating: Displayed by:</p>
+						<!-- Add CSS to prevent displaying URL -->
+						<p class="hidePosterURL">{{ movie.movie_image}}</p>
+					</li>
+				</div>
+				<div class="card-action">
+                <!-- Form for star rating only appears if a user is logged in -->
+				{% if session.user %}
+						<a href="{{url_for('movie', movie_id=movie._id)}}">Click here to rate this movie! </a>
+				{% else %}		
+						<a href="{{ url_for('login') }}" class="brand-logo" >Log in or sign up to rate movie.</a>
+				{% endif %}	
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endblock %}
+
+
+    
