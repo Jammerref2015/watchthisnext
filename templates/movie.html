@@ -21,7 +21,8 @@
 						<br>
 						<p><strong>Where did you see the movie?:</strong> {{ movie.platform }}</p>
 						<br>
-						<p><strong>Rate this movie (1 -5):</strong> 
+                        <i class="fas fa-star" aria-hidden="true">
+						<p><strong>Rate this movie (1 -5) {{ movie.rating }}:</strong> 
 							{% if session.user == movie.created_by %}
 							<a href="#">Edit Rating</a></p>
 						{% else %}
