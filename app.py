@@ -93,10 +93,23 @@ def addmovie():
     return render_template("addmovie.html")
 
 
+@app.route("/delete_movie/<movie_id>")
+def delete_movie(movie_id):
+    mongo.db.movies.delete_one({"_id": ObjectId(movie_id)})
+    flash("text")
+    return redirect(url_for("get_movies"))
+
+
 @app.route("/movie/<movie_id>")
 def movie(movie_id):
     movie_data = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
     return render_template('movie.html', movie=movie_data)
+
+
+@app.route("/edit_rating/<movie_id>", methods=["GET", "POST"])
+def edit_rating(movie_id):
+    movies = mongo.db.movies.find().sort("movie_title", 1)
+    return render_template("edit_movie.html", movies=movies)
 
 
 @app.route("/logout")

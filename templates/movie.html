@@ -21,20 +21,15 @@
 						<br>
 						<p><strong>Where did you see the movie?:</strong> {{ movie.platform }}</p>
 						<br>
-                        <i class="fas fa-star" aria-hidden="true">
 						<p><strong>Rate this movie (1 -5) {{ movie.rating }}:</strong> 
-							{% if session.user == movie.created_by %}
-							<a href="#">Edit Rating</a></p>
-						{% else %}
-						<p></p>
-						{% endif %}
 						<br>
 						<p><strong>Release year:</strong> {{ movie.release_year}}</p>
 						<br>
 						<p><strong>Age rating:</strong> {{ movie.age_rating}}</p>
 						<br>
 						<p><strong>Review created by:</strong> {{ movie.created_by}}</p>
-					</div>
+                       </div>
+				</div>
 				</div>
 			</div>
 
