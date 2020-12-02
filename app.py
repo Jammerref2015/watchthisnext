@@ -96,7 +96,7 @@ def addmovie():
 @app.route("/delete_movie/<movie_id>")
 def delete_movie(movie_id):
     mongo.db.movies.delete_one({"_id": ObjectId(movie_id)})
-    flash("text")
+    flash("Here's looking at you kid. (Casablanca - 1942)")
     return redirect(url_for("get_movies"))
 
 
@@ -106,10 +106,25 @@ def movie(movie_id):
     return render_template('movie.html', movie=movie_data)
 
 
-@app.route("/edit_rating/<movie_id>", methods=["GET", "POST"])
-def edit_rating(movie_id):
-    movies = mongo.db.movies.find().sort("movie_title", 1)
-    return render_template("edit_movie.html", movies=movies)
+@app.route("/edit_movie/<movie_id>", methods=["GET", "POST"])
+def edit_movie(movie_id):
+    if request.method == "POST":
+        movie = {
+            "title": request.form.get("title"),
+            "synopsis": request.form.get("synopsis"),
+            "genre": request.form.get("genre"),
+            "platform": request.form.get("platform"),
+            "rating": request.form.get("rating"),
+            "release_year": request.form.get("release_year"),
+            "age_rating": request.form.get("age_rating"),
+            "movie_image": request.form.get("movie_image"),
+            "created_by": session["user"]
+        }
+        mongo.db.movies.update({"_id": ObjectId(movie_id)}, movie)
+        flash("Movie Successfully Added!!!")
+
+    movie = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
+    return render_template("edit_movie.html", movie=movie)
 
 
 @app.route("/logout")
