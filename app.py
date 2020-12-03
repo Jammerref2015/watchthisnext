@@ -75,6 +75,14 @@ def login():
 @app.route("/addmovie", methods=["GET", "POST"])
 def addmovie():
     if request.method == "POST":
+
+        existing_movie = mongo.db.movies.find_one(
+            {"title": request.form.get("title")})
+
+        if existing_movie:
+            flash("Movie already exists")
+            return redirect(url_for("addmovie"))
+
         movie = {
             "title": request.form.get("title"),
             "synopsis": request.form.get("synopsis"),
@@ -121,7 +129,7 @@ def edit_movie(movie_id):
             "created_by": session["user"]
         }
         mongo.db.movies.update({"_id": ObjectId(movie_id)}, movie)
-        flash("Movie Successfully Added!!!")
+        flash("Movie Successfully Updated!!!")
 
     movie = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
     return render_template("edit_movie.html", movie=movie)
