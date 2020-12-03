@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@font-face {
+    font-family: 'amity_jackregular';
+    src: url('/static/fonts/amity_jack/amity_jack-webfont.woff2') format('woff2'),
+         url('/static/fonts/amity_jack/amity_jack-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
 body{
     margin: 0;
     padding: 0;
-    font-family: Quicksand, 'Courier New', Courier, monospace;
+    font-family: 'amity_jackregular', 'Courier New', Courier, monospace;
 }
 
 .addMovieHeaderStyling {
@@ -20,7 +26,8 @@ body{
 
 /* Styling shadow on form */
 .addMovieForm {
-    border-radius: 2%;    
+    border-radius: 2%;   
+    font-family:  'Courier New', Courier, monospace; 
 }
 
 /* Custom styling for button wave effect */
