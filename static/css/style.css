@@ -1,25 +1,33 @@
+/* Font used in logo */ 
 @font-face {
     font-family: 'amity_jackregular';
     src: url('/static/fonts/amity_jack/amity_jack-webfont.woff2') format('woff2'),
          url('/static/fonts/amity_jack/amity_jack-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 body{
     margin: 0;
     padding: 0;
+    font-family: arial, 'Courier New', Courier, monospace;
+}
+
+.headerstyle {
+    background-color: #617478;
     font-family: 'amity_jackregular', 'Courier New', Courier, monospace;
+    font-size: 1.6rem;
+}
+
+.headerstyle a {
+    color:#e3122d;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .addMovieHeaderStyling {
     text-align: center
 }
 
-.text-shadow {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
+/* Prevent displaying URL for posters/images */ 
 .hidePosterURL{
     display: none;
 }
@@ -41,6 +49,7 @@ body{
     height: 50%;
 }
 
+/* Styling for star rating system. */ 
 .stars {
     display: inline-block;
 }
