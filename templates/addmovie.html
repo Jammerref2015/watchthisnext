@@ -97,10 +97,25 @@
                 <!-- Movie image URL -->
                 <div class="row">
 					<div class="input-field col s12">
-						<input placeholder = "Add a movie poster image here!" value = "" class="movieImage" id = "movie_image"
+						<input placeholder = "Add a movie poster image here! You don't have to but they are nice." value = "" class="movieImage" id = "movie_image"
                      type = "text" name="movie_image"/>
 						<label for = "movie_image">Movie poster URL:</label>
 					</div>
+                    <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Need help?</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Need help finding an image?</h4>
+      <p>Do a google search for a poster. e.g 'Jaws movie poster'</p>
+      <p>Find the one you like and right click on it. </p>
+      <p>Select 'Copy image address' and paste the address in here. </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
 				</div> 
 
                 <div class="row">
