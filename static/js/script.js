@@ -4,10 +4,12 @@ $(document).ready(function(){
   $('select').formSelect();
   $('.datepicker').datepicker({
       format: "yyyy",
-      yearRange: 30,
+      yearRange: 120,
+      maxDate: new Date(2025,7,14),
       showClearBtn: true,
       i18n: {
           done: "Select"
       }
   })
 })
+
