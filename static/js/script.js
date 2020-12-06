@@ -2,6 +2,7 @@ $(document).ready(function(){
   $('.sidenav').sidenav();
   $('.modal').modal();
   $('select').formSelect();
+  $('.tooltipped').tooltip();
   $('.datepicker').datepicker({
       format: "yyyy",
       yearRange: 120,
