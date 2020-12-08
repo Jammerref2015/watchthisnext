@@ -6,6 +6,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 body{
     margin: 0;
     padding: 0;
@@ -30,6 +31,11 @@ body{
 /* Prevent displaying URL for posters/images */ 
 .hidePosterURL{
     display: none;
+}
+
+.cardStyling {
+    width:20%;
+    height:50%;
 }
 
 /* Styling shadow on form */
