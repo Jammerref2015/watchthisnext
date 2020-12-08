@@ -32,10 +32,13 @@
 
 
 <!-- Display movie reviews in materialize cards-->
+    
+
 
 <div class="row">
-{% for movie in movies %}
-	<div class="col s12 m7">
+
+	<div class="col">
+    {% for movie in movies %}
 		    <div class="card">
 			    <div class="card-image">
                     <!-- Placeholder image if user does not submit one. Need to look for 404 also. -->
@@ -48,8 +51,9 @@
 				    <span class="card-title">Click for more info!</span>
 			    </div>
                     {% endif %} 
-		    <div class="card-content">
-			    <li>
+
+		        <div class="card-content">
+			        <li>
 				    <p>Movie rating: {{ movie.age_rating}}</p>
 				    <p>Movie added by: {{ movie.created_by}}</p>
                     <p>Your rating: {{ movie.rating }} Stars</p>
@@ -58,8 +62,9 @@
 			    </li>
 		    </div>
 		<div class="card-action">
+
             <!-- Allow creator of a review to delete review. -->
-                {% if session.user == movie.created_by %}
+            {% if session.user == movie.created_by %}
 			<a href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit Review</a>
             <!-- Modal appears when user clicks on delete movie review.-->
             <!-- Modal Trigger -->
@@ -74,10 +79,10 @@
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">No</a>
             <a href="{{ url_for('delete_movie', movie_id=movie._id) }}" class="modal-close waves-effect waves-green btn-flat">Yes</a>
         </div>
-    
-        {% else %}
+            {% else %}
 			<p></p>
-		{% endif %}
+		    {% endif %}
+            
         <!-- Form for star rating only appears if a user is logged in -->
 		{% if session.user %}
 			<a href="#">Click here to rate this movie! </a>     
@@ -86,8 +91,9 @@
 		{% endif %}	
 	        </div>
         </div>
-		{% endfor %}
-    </div>    
+		{% endfor %}  
+    </div>
+  
 </div>
 
 {% endblock %}
