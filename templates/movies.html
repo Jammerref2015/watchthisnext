@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container">
 <div class="row">
     <div class="col s12 m12 l12 center">
         <h1> Watch this next.</h1>
@@ -30,72 +31,69 @@
 	</form>
 </div>
 
+<!-- Button appears when user starts scrolling allowing you return to the top of the page. -->
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
 
 <!-- Display movie reviews in materialize cards-->
-    
-
-
 <div class="row">
+{% for movie in movies %}
+	<div class="col l6">
+    
+		<div class="card ">
+			<div class="card-image cardImageStyling">
+                <!-- Placeholder image if user does not submit one. Need to look for 404 also. -->
+                {% if movie.movie_image == "" %}
+                <a href="{{url_for('movie', movie_id=movie._id)}}">
+                <img src="{{url_for('static', filename='images/No_poster_image.jpg')}}" alt="{{movie.title}}"/></a>
+                {% else %}
+				<a href="{{url_for('movie', movie_id=movie._id)}}">
+				<img src="{{ movie.movie_image }}"  alt="movie poster image"> </a>
+				<span class="card-title"></span>
+			</div><!-- card-image -->
+                {% endif %} 
 
-	<div class="col">
-    {% for movie in movies %}
-		    <div class="card">
-			    <div class="card-image">
-                    <!-- Placeholder image if user does not submit one. Need to look for 404 also. -->
-                    {% if movie.movie_image == "" %}
-                    <a href="{{url_for('movie', movie_id=movie._id)}}">
-                    <img src="{{url_for('static', filename='images/No_poster_image.jpg')}}" alt="{{movie.title}}"/></a>
-                    {% else %}
-				    <a href="{{url_for('movie', movie_id=movie._id)}}">
-				    <img src="{{ movie.movie_image }}"  alt="movie poster image"> </a>
-				    <span class="card-title">Click for more info!</span>
-			    </div>
-                    {% endif %} 
-
-		        <div class="card-content">
-			        <li>
-				    <p>Movie rating: {{ movie.age_rating}}</p>
-				    <p>Movie added by: {{ movie.created_by}}</p>
-                    <p>Your rating: {{ movie.rating }} Stars</p>
-				    <!-- Add CSS to prevent displaying URL -->
-				    <p class="hidePosterURL">{{ movie.movie_image}}</p>
+		    <div class="card-content cardContentStyling">
+			    <li>
+				<p>Title: {{ movie.title}}</p>
+				<p>Review by: {{ movie.created_by}}</p>
+                <p>Your rating: {{ movie.rating }} Stars</p>
+				<!-- Add CSS to prevent displaying URL -->
+				<p class="hidePosterURL">{{ movie.movie_image}}</p>
 			    </li>
-		    </div>
-		<div class="card-action">
+		    </div><!-- Card content -->
 
-            <!-- Allow creator of a review to delete review. -->
-            {% if session.user == movie.created_by %}
-			<a href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit Review</a>
-            <!-- Modal appears when user clicks on delete movie review.-->
-            <!-- Modal Trigger -->
-            <button data-target="modal1" class="btn modal-trigger">Delete movie</button>
-            <!-- Modal Structure -->
+		    <div class="card-action cardActionStyling">
+                <!-- Allow creator of a review to delete review. -->
+                {% if session.user == movie.created_by %}
+			    <a href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit Review</a>
+
+                <!-- Modal appears when user clicks on delete movie review.-->
+                <!-- Modal Trigger -->
+                <button data-target="modal1" class="btn modal-trigger">Delete movie</button>
+                <!-- Modal Structure -->
+            </div>
             <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>Are you sure you want to delete? </h4>
-            <p>Another movie qoute?!?</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">No</a>
-            <a href="{{ url_for('delete_movie', movie_id=movie._id) }}" class="modal-close waves-effect waves-green btn-flat">Yes</a>
-        </div>
+                <div class="modal-content">
+                            <h4>Are you sure you want to delete? </h4>
+                            <p>Another movie qoute?!?</p>
+                </div><!-- Modal-content -->
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">No</a>
+                <a href="{{ url_for('delete_movie', movie_id=movie._id) }}" class="modal-close waves-effect waves-green btn-flat">Yes</a>
+            </div><!-- modal-footer -->
             {% else %}
 			<p></p>
 		    {% endif %}
             
-        <!-- Form for star rating only appears if a user is logged in -->
-		{% if session.user %}
-			<a href="#">Click here to rate this movie! </a>     
-		{% else %}		
-			<a href="{{ url_for('login') }}" class="brand-logo" >Log in or sign up to rate movie.</a>
-		{% endif %}	
 	        </div>
         </div>
-		{% endfor %}  
-    </div>
-  
-</div>
+		   
+    </div><!-- Col -->
+   {% endfor %} 
+</div><!-- Row -->
 
+
+</div><!-- Container -->
 {% endblock %}
 
 
