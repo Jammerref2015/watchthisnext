@@ -17,6 +17,16 @@ body{
 
 }
 
+/* Styling for materialize flash messages */
+.flashStyling {
+    background:none;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-size:170%;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color:#fff;
+}
+
 /* Nav styling */ 
 .navStyle {
     background-color: #617478;
@@ -31,7 +41,7 @@ body{
 }
 
 
-/* Main page header styling */
+/* Header styling */
 
 .headerStyling{
     text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
@@ -72,16 +82,58 @@ body{
     height:100%;
 }
 
-/* Styling shadow on form */
+/* Styling for add movie review form */
 .addMovieForm {
     border-radius: 2%;   
     font-family:  'Courier New', Courier, monospace; 
+    background-color: #e8f0fe;
     
+    
+}
+
+
+.input-field label{
+    font-size:170%;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color:#271d1d;
+    
+}
+
+.ratingLabel {
+     font-size:170%;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color:#271d1d;
+}
+
+.addMovieButton {
+    font-family: Nunito, 'Courier New', Courier, monospace;
+}
+
+.modalStyling{
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    background-image: url("/static/images/doc_brown_bw.jpg");
+    color:#fff;
 }
 
 /* Custom styling for button wave effect */
 .waves-effect.waves-brown .waves-ripple {
   background-color: rgba(121, 85, 72, 0.65);
+}
+
+
+/* Log in page styling */
+.forgotPassword {
+    list-style-type:none;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-size:120%;
+}
+
+.forgotPassword a{
+    font-weight:bold;
+    color:red;
+    
 }
 
 
@@ -99,7 +151,7 @@ body{
     float: right;
     padding: 2px;
     font-size: 24px;
-    color: #444;
+    color: #170e0e;
     transition: all .2s;
 }
 

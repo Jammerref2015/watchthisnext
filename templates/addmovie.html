@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col s12">
-			<h1 class="addMovieHeaderStyling"> Add a movie </h1>
+			<h1 class="headerStyling center-align"> Add a review </h1>
 		</div>
 	</div>
 	<div class="row">
@@ -47,8 +47,8 @@
                 <!-- Rating -->
             <div class="row">
                 <div class="col s12">
-                <label for = "platform">Rating:</label>
-					<div class="form-group" action="" placeholder = "What platform did you see the movie on? Netflix? DVD?">
+                <label for = "platform" class="ratingLabel">Rating:</label>
+					<div class="form-group" action="" placeholder = "5 stars is great! 1 star? Not so great.">
 							<div class="stars">
 								<input id="5" type="radio" name="rating" value="5"/>
 								<label for="5"></label>
@@ -81,7 +81,7 @@
                 <!-- Release year-->
 				<div class="row">
 					<div class="input-field col s12">
-						<input placeholder = "Genre! Is it a Comedy? Horror?" value = "" class="release_year" id = "release_year"
+						<input placeholder = "What year was the movie released?" value = "" class="release_year" id = "release_year"
                      type = "text" name="release_year"  maxlength="4" required/>
 						<label for = "release_year">Release Year</label>
 					</div>
@@ -102,11 +102,11 @@
 						<label for = "movie_image">Movie poster URL:</label>
 					</div>
                     <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Need help?</a>
+  <a class="waves-effect waves-light btn modal-trigger red darken-3" href="#modal1">Need help?</a>
 
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
-    <div class="modal-content">
+    <div class="modal-content modalStyling">
       <h4>Need help finding an image?</h4>
       <p>Do a google search for a poster. e.g 'Jaws movie poster'</p>
       <p>Find the one you like and right click on it. </p>
@@ -120,8 +120,8 @@
 
                 <div class="row">
 					<div class="col s12 center-align">
-						<button type="submit" class="btn-large waves-light darken-4 text-shadow">
-                        Add movie </button>
+						<button type="submit" class="btn-large waves-light  teal darken-4">
+                        Add review </button>
 					</div>
 				</div>
 			</form>

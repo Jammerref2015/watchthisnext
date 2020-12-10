@@ -142,7 +142,7 @@ def edit_movie(movie_id):
 
 @app.route("/logout")
 def logout():
-    flash("I used to hate the water. I can't imagine why. - Jaws")
+    flash("This is Ripley, last survivor of the Nostromo, signing off. - Ripley from Alien (1979)")
     session.pop("user")
     return redirect(url_for('login'))
 
