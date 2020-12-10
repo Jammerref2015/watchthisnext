@@ -3,8 +3,8 @@
 
 <div class="row">
 	<div class="col s12 m7">
-		<h1>{{ movie.title }}</h1>
-		<h3>{{ movie.release_year}}</h3>
+		<h1 class="headerStyling">{{ movie.title }}</h1>
+		<h3 class="headerStyling">{{ movie.release_year}}</h3>
 		<div class="card">
 			<div class="card-image waves-effect waves-block waves-light">
             <!-- Check to see if movie has a poster uploaded. -->
@@ -38,21 +38,19 @@
 				{% endif %}
 				</div>
 				<div class="card-reveal">
-					<span class="card-title grey-text text-darken-4">{{ movie.title }}<i class="material-icons right">close</i></span>
-					<div class="cardDetails">
-						<p><strong>Synopsis:</strong> {{ movie.synopsis }}</p>
-						<br>
-						<p><strong>Genre:</strong> {{ movie.genre }}</p>
-						<br>
-						<p><strong>Where did you see the movie?:</strong> {{ movie.platform }}</p>
-						<br>
-						<p><strong>Rate this movie (1 -5) {{ movie.rating }}:</strong></p>
-						<br>
-						<p><strong>Release year:</strong> {{ movie.release_year}}</p>
-						<br>
-						<p><strong>Age rating:</strong> {{ movie.age_rating}}</p>
-						<br>
-						<p><strong>Review created by:</strong> {{ movie.created_by}}</p>
+					<span class="card-title titleHeading text-darken-4">{{ movie.title }}<i class="fas fa-window-close right" aria-hidden="true"></i></span>
+					<div class="cardDetails movieDetailStyling">
+                    <ul>
+                        <li><strong>Genre:</strong> {{ movie.genre }}</li>
+                        <li><strong>Synopsis:</strong> {{ movie.synopsis }} </li>
+                        <li><strong>Where did you see the movie?:</strong> {{ movie.platform }}</li>
+                        <li><strong>Release year:</strong> {{ movie.release_year}} </li>
+                        <li><strong>Age rating:</strong> {{ movie.age_rating}} </li>
+                        <li><strong>Rate this movie (1 -5)</strong> {{ movie.rating }}  </li>
+                        <li><strong>Review created by:</strong> {{ movie.created_by}} </li>
+                        
+                    </ul>
+
 					</div>
 				</div>
 			</div>

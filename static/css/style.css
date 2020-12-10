@@ -133,9 +133,38 @@ body{
 .forgotPassword a{
     font-weight:bold;
     color:red;
-    
 }
 
+/* register page */
+
+.registerHeading{
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight:bold;
+    color:#fff;
+    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
+}
+
+/* styling for individual movie page */
+.movieDetailStyling {
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight:bold;
+    font-size:160%;
+}
+
+.movieDetailStyling ul {
+    padding:5%;   
+}
+
+.movieDetailStyling ul li {
+    margin-top:5%;   
+}
+
+.titleHeading {
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight:bold;
+    font-size:160%;
+
+}
 
 
 /* Styling for star rating system. */ 
