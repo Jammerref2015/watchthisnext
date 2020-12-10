@@ -9,27 +9,36 @@
     font-style: normal;
 }
 
-
-
 body{
     margin: 0;
     padding: 0;
     font-family: arial, 'Courier New', Courier, monospace;
+    background-color:#384345;
+
 }
 
-/* Header styling */ 
-.headerstyle {
+/* Nav styling */ 
+.navStyle {
     background-color: #617478;
     font-family: 'amity_jackregular', 'Courier New', Courier, monospace;
     font-size: 1.6rem;
 }
 
-.headerstyle a {
+.navStyle a {
     color:#e3122d;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-size: 100%;
 }
 
 
+/* Main page header styling */
+
+.headerStyling{
+    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
+    font-family: Nunito;
+    font-weight: bold;
+    color: #fff;
+}
 
 /* CARD STYLING */
 
@@ -122,13 +131,29 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: red;
+  background-color: #e3122d;
   color: white;
   cursor: pointer;
   padding: 15px;
   border-radius: 4px;
+  box-shadow: 5px 5px 5px black;
 }
 
 #myBtn:hover {
   background-color: #555;
 }
+
+/* Footer */
+
+.footerBg{
+    background-color:#617478;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.socialLinks{
+    font-family: Nunito;
+    font-weight: bold;
+    list-style-type:none;
+    font-size:150%;
+}
+

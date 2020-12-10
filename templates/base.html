@@ -15,7 +15,7 @@
 
 	<header>
         <!-- top navbar -->
-		<nav class="nav-extended headerstyle">
+		<nav class="nav-extended navStyle">
 			<div class="nav-wrapper">
 				<a href="{{ url_for('get_movies') }}" class="brand-logo">Watch this next</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -67,30 +67,25 @@
         {% endblock %}
     </main>
 
-    <footer class="page-footer darken-4">
-  <div class="container">
-    <div class="row">
-     
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
-        <ul class="col d-flex justify-content-center mb-1">
-          <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+<!-- Footer -->
+<div class="container-fluid center-align">
+	<footer class="page-footer footerBg">
+		<div class="footer-copyright">
+			<div class="container socialLinks">
+            <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
           <a class="grey-text text-lighten-3" href="#!"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
           <a class="grey-text text-lighten-3" href="#!"><i class="fab fa-instagram" aria-hidden="true"></i></a>
           <a class="grey-text text-lighten-3" href="#!"><i class="fab fa-github-square" aria-hidden="true"></i></a>
                     
           </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-    © 2020 Adrian Looney 
-    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-    </div>
-  </div>
-</footer>
+				© 2020 Adrian Looney
+			</div>
+		</div>
+	</footer>
+</div>
+
+
+
 
     
 
