@@ -36,7 +36,7 @@
 
 <!-- Display movie reviews in materialize cards-->
 <div class="row">
-{% for movie in movies %}
+{% for movie in movies %}--
 	<div class="col l6">
     
 		<div class="card ">
@@ -49,8 +49,9 @@
 				<a href="{{url_for('movie', movie_id=movie._id)}}">
 				<img src="{{ movie.movie_image }}"  alt="movie poster image"> </a>
 				<span class="card-title"></span>
+                {% endif %}
 			</div><!-- card-image -->
-                {% endif %} 
+                 
 
 		    <div class="card-content cardContentStyling">
 			    <li>
