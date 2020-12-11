@@ -36,7 +36,7 @@
 		<ul class="sidenav" id="mobile-demo">
             <li><h4 class="center-align light-blue-text text-darken 4">Watch this next</h4></li>
             	<li><a href="{{ url_for('get_movies') }}">Home</a></li>
-                {% if session.user or "admin" %}
+                {% if session.user %}
                     <li><a href="{{ url_for('addmovie') }}">Add review</a></li>
 					<li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
