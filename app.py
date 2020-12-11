@@ -44,8 +44,8 @@ def register():
             return redirect(url_for("register"))
 
         register = {
-          "username": request.form.get("username").lower(),
-          "password": generate_password_hash(request.form.get("password"))
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
 
@@ -62,7 +62,7 @@ def login():
 
         if existing_user:
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
             else:
@@ -70,7 +70,7 @@ def login():
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
         else:
-                #username doesn't exist 
+            # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
@@ -142,7 +142,8 @@ def edit_movie(movie_id):
 
 @app.route("/logout")
 def logout():
-    flash("This is Ripley, last survivor of the Nostromo, signing off. - Ripley from Alien (1979)")
+    flash("This is Ripley, last survivor of the Nostromo, signing off."
+          "- Ripley from Alien (1979)")
     session.pop("user")
     return redirect(url_for('login'))
 

@@ -1,131 +1,119 @@
 {% extends "base.html" %}
 {% block content %}
-
 <div class="container">
-	<div class="row">
-		<div class="col s12">
-			<h1 class="headerStyling center-align"> Add a review </h1>
-		</div>
-	</div>
-	<div class="row">
-		<div class="row">
-			<form class="col s12 z-depth-5 addMovieForm" method="POST" action="{{ url_for('addmovie') }}">
-            <!-- Movie title-->
-				<div class="row">
-					<div class="input-field col s12">
-						<input placeholder = "Name of the movie." value = "" class="title" id = "title"
-                     type = "text" name="title" required/>
-						<label for = "title">Title</label>
-					</div>
-				</div>
+    <div class="row">
+        <div class="col s12">
+            <h1 class="headerStyling center-align"> Add a review </h1>
+        </div>
+    </div>
+
+    <!-- Button appears when user starts scrolling allowing you return to the top of the page. -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+   
+    <div class="row">
+        <div class="row">
+            <!-- Movie review form.-->
+            <form class="col s12 z-depth-5 addMovieForm" method="POST" action="{{ url_for('addmovie') }}">
+                <!-- Movie title-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Name of the movie." value="" class="title" id="title" type="text"
+                            name="title" required />
+                        <label for="title">Title</label>
+                    </div>
+                </div>
                 <!-- Synopsis -->
-				<div class="row">
-					<div class="input-field col s12">
-						<textarea  value = "" class="materialize-textarea synopsis" id = "synopsis"
-                     type = "text" name="synopsis" minlength="5"
-                            maxlength="240" required> </textarea>
-						<label for = "synopsis">Synopsis - Tell us what the movie is about.</label>         
-					</div>
-				</div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea value="" class="materialize-textarea synopsis" id="synopsis" type="text"
+                            name="synopsis" minlength="5" maxlength="240" required> </textarea>
+                        <label for="synopsis">Synopsis</label>
+                    </div>
+                </div>
                 <!-- Genre -->
                 <div class="row">
-					<div class="input-field col s12">
-						<input placeholder = "Genre! Is it a Comedy? Horror? Drama?" value = "" class="genre" id = "genre"
-                     type = "text" name="genre" minlength="5"
-                            maxlength="30" required/>
-                        <label for = "genre">Genre</label>
-					</div>
-				</div>
-                <!-- Platform -->
-				<div class="row">
-					<div class="input-field col s12">
-						<input placeholder = "What platform did you see the movie on? Netflix? DVD?" value = "" class="platform" id = "platform"
-                     type = "text" name="platform" />
-						<label for = "platform">Platform</label>
-					</div>
-				</div>
-                <!-- Rating -->
-            <div class="row">
-                <div class="col s12">
-                <label for = "platform" class="ratingLabel">Rating:</label>
-					<div class="form-group" action="" placeholder = "5 stars is great! 1 star? Not so great.">
-							<div class="stars">
-								<input id="5" type="radio" name="rating" value="5"/>
-								<label for="5"></label>
-								<input id="4" type="radio" name="rating" value="4"/>
-								<label for="4"></label>
-								<input id="3" type="radio" name="rating" value="3"/>
-								<label for="3"></label>
-								<input id="2" type="radio" name="rating" value="2"/>
-								<label for="2"></label>
-								<input id="1" type="radio" name="rating" value="1"/>
-								<label for="1"></label>
-							</div>
-						</div>
+                    <div class="input-field col s12">
+                        <input placeholder="Genre! Is it a Comedy? Horror? Drama?" value="" class="genre" id="genre"
+                            type="text" name="genre" minlength="5" maxlength="30" required />
+                        <label for="genre">Genre</label>
                     </div>
-			</div>
-
-            <!--  
-                User review might go but keep this for now. 
+                </div>
+                <!-- Platform -->
                 <div class="row">
-					<div class="input-field col s12">
-						<input placeholder = "What did you think of the movie?" value = "" class="review" id = "review"
-                     type = "text" name="review" required/>
-                     <label for = "review">Write a short review.</label>
-                     </div>
-				</div>
-
-                --> 
-
-               
+                    <div class="input-field col s12">
+                        <input placeholder="What platform did you see the movie on? Netflix? DVD?" value=""
+                            class="platform" id="platform" type="text" name="platform" />
+                        <label for="platform">Platform</label>
+                    </div>
+                </div>
+                <!-- Rating -->
+                <div class="row">
+                    <div class="col s12">
+                        <label for="platform" class="ratingLabel">Rating:</label>
+                        <div class="form-group" action="" placeholder="5 stars is great! 1 star? Not so great.">
+                            <div class="stars">
+                                <input id="5" type="radio" name="rating" value="5" />
+                                <label for="5"></label>
+                                <input id="4" type="radio" name="rating" value="4" />
+                                <label for="4"></label>
+                                <input id="3" type="radio" name="rating" value="3" />
+                                <label for="3"></label>
+                                <input id="2" type="radio" name="rating" value="2" />
+                                <label for="2"></label>
+                                <input id="1" type="radio" name="rating" value="1" />
+                                <label for="1"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- Release year-->
-				<div class="row">
-					<div class="input-field col s12">
-						<input placeholder = "What year was the movie released?" value = "" class="release_year" id = "release_year"
-                     type = "text" name="release_year"  maxlength="4" required/>
-						<label for = "release_year">Release Year</label>
-					</div>
-				</div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="What year was the movie released?" value="" class="release_year"
+                            id="release_year" type="text" name="release_year" maxlength="4" required />
+                        <label for="release_year">Release Year</label>
+                    </div>
+                </div>
                 <!-- Age rating -->
                 <div class="row">
-					<div class="input-field col s12">
-						<input placeholder = "What age rating does the movie have?" value = "" class="age_rating" id = "age_rating"
-                     type = "text" name="age_rating"  />
-						<label for = "age_rating">Age Rating</label>
-					</div>
-				</div>
+                    <div class="input-field col s12">
+                        <input placeholder="What age rating does the movie have?" value="" class="age_rating"
+                            id="age_rating" type="text" name="age_rating" />
+                        <label for="age_rating">Age Rating</label>
+                    </div>
+                </div>
                 <!-- Movie image URL -->
                 <div class="row">
-					<div class="input-field col s12">
-						<input placeholder = "Add a movie poster image here!" value = "" class="movieImage" id = "movie_image"
-                     type = "text" name="movie_image"/>
-						<label for = "movie_image">Movie poster URL:</label>
-					</div>
+                    <div class="input-field col s12">
+                        <input placeholder="Add a movie poster image here!" value="" class="movieImage" id="movie_image"
+                            type="text" name="movie_image" />
+                        <label for="movie_image">Movie poster URL:</label>
+                    </div>
+                    <!-- Modal pop-up with instructions for finding a poster URL -->
                     <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger red darken-3" href="#modal1">Need help?</a>
+                    <a class="waves-effect waves-light btn modal-trigger red darken-3" href="#modal1">Need help?</a>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content modalStyling">
-      <h4>Need help finding an image?</h4>
-      <p>Do a google search for a poster. e.g 'Jaws movie poster'</p>
-      <p>Find the one you like and right click on it. </p>
-      <p>Select 'Copy image address' and paste the address in here. </p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  </div>
-				</div> 
-
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content modalStyling">
+                            <h4>Need help finding an image?</h4>
+                            <p>Do a google search for a poster. e.g 'Jaws movie poster'</p>
+                            <p>Find the one you like and right click on it. </p>
+                            <p>Select 'Copy image address' and paste the address in here. </p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add review submit button -->
                 <div class="row">
-					<div class="col s12 center-align">
-						<button type="submit" class="btn-large waves-light  teal darken-4">
-                        Add review </button>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
-
-	{% endblock %}
+                    <div class="col s12 center-align">
+                        <button type="submit" class="btn-large waves-light  teal darken-4">
+                            Add review </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock %}

@@ -14,7 +14,6 @@ body{
     padding: 0;
     font-family: arial, 'Courier New', Courier, monospace;
     background-color:#384345;
-
 }
 
 /* Styling for materialize flash messages */
@@ -33,16 +32,13 @@ body{
     font-family: 'amity_jackregular', 'Courier New', Courier, monospace;
     font-size: 1.6rem;
 }
-
 .navStyle a {
     color:#e3122d;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     font-size: 100%;
 }
 
-
 /* Header styling */
-
 .headerStyling{
     text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
     font-family: Nunito;
@@ -57,28 +53,22 @@ body{
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     font-size: 80%;
 }
-
   .searchStyling{
     margin-top:20%;  
     }
-
   .searchQuery{
     font-size:70%;
-  }  
+    }  
   .headerStyling{
     text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
     font-family: Nunito;
     font-weight: bold;
     color: #fff;
     font-size:150%;
+    }
 }
-}
-
-
-
 
 /* CARD STYLING */
-
 .cardContentStyling {
     font-family: Nunito;
     font-weight: bold;
@@ -115,9 +105,7 @@ body{
 .addMovieForm {
     border-radius: 2%;   
     font-family:  'Courier New', Courier, monospace; 
-    background-color: #e8f0fe;
-    
-    
+    background-color: #e8f0fe;    
 }
 
 
@@ -125,12 +113,11 @@ body{
     font-size:170%;
     font-family: Nunito, 'Courier New', Courier, monospace;
     font-weight: bold;
-    color:#271d1d;
-    
+    color:#271d1d; 
 }
 
 .ratingLabel {
-     font-size:170%;
+    font-size:170%;
     font-family: Nunito, 'Courier New', Courier, monospace;
     font-weight: bold;
     color:#271d1d;
@@ -140,7 +127,7 @@ body{
     font-family: Nunito, 'Courier New', Courier, monospace;
 }
 
-.modalStyling{
+.modalStyling {
     font-family: Nunito, 'Courier New', Courier, monospace;
     background-image: url("/static/images/doc_brown_bw.jpg");
     color:#fff;
@@ -166,7 +153,7 @@ body{
 
 /* register page */
 
-.registerHeading{
+.registerHeading {
     font-family: Nunito, 'Courier New', Courier, monospace;
     font-weight:bold;
     color:#fff;
@@ -192,9 +179,7 @@ body{
     font-family: Nunito, 'Courier New', Courier, monospace;
     font-weight:bold;
     font-size:160%;
-
 }
-
 
 /* Styling for star rating system. */ 
 .stars {

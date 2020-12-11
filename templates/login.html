@@ -1,40 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
-
 <h3 class="center-align headerStyling ">Log in</h3>
 
+<!-- Button appears when user starts scrolling allowing you return to the top of the page. -->
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+
 <div class="row">
-	<form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
-		<div class="card-panel">
-			  <!-- username -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
-						<input id="username" name="username" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-						<label for="username">Username</label>
-					</div>
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+        <div class="card-panel">
+            <!-- username -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+                    <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    <label for="username">Username</label>
                 </div>
-                <!-- Password -->
-                 <div class="row">
-                    <div class="input-field col s12">
-						<i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
-                        <input id="password" name="password" type="password" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                        <label for="password">Password</label>
-                    </div>
+            </div>
+            <!-- Password -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
+                    <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    <label for="password">Password</label>
                 </div>
-                <!-- log in -->
-                <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
-                        Log in <i class="fas fa-sign-in-alt"></i>
-                    </button>
-                </div>
-                <div class="row">
-                    <li class="forgotPassword"><a href="#">Forget your password?</a></li>
-                </div>
-		</div>
-	</form>
+            </div>
+            <!-- log in -->
+            <div class="row">
+                <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+                    Log in <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </div>
+            <div class="row">
+                <li class="forgotPassword"><a href="#">Forget your password?</a></li>
+            </div>
+        </div>
+    </form>
 </div>
 
 {% endblock %}
