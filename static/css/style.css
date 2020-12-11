@@ -50,6 +50,33 @@ body{
     color: #fff;
 }
 
+/* Styling to fix display on mobile devices */
+@media only screen and (max-width: 1024px) {
+   .navStyle a {
+    color:#e3122d;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-size: 80%;
+}
+
+  .searchStyling{
+    margin-top:20%;  
+    }
+
+  .searchQuery{
+    font-size:70%;
+  }  
+  .headerStyling{
+    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
+    font-family: Nunito;
+    font-weight: bold;
+    color: #fff;
+    font-size:150%;
+}
+}
+
+
+
+
 /* CARD STYLING */
 
 .cardContentStyling {
@@ -72,6 +99,7 @@ body{
     text-align:center;
 }
 
+
 /* Prevent displaying URL for posters/images */ 
 .hidePosterURL{
     display: none;
@@ -81,6 +109,7 @@ body{
     width:100%;
     height:100%;
 }
+
 
 /* Styling for add movie review form */
 .addMovieForm {
