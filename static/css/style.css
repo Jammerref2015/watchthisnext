@@ -87,7 +87,11 @@ body{
 
 .cardActionStyling {
     text-align:center;
+    font-size:170%;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
+
 
 
 /* Prevent displaying URL for posters/images */ 
