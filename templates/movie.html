@@ -39,15 +39,16 @@
                 {% else %}
                 <p></p>
                 {% endif %}
-                {% if session.user == "admin" %}
+                {% if session.user == "Admin" %}
                 <a href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit Review</a>
                 <!-- Modal appears when user clicks on delete movie review.-->
                 <!-- Modal Trigger -->
                 <button data-target="modal1" class="btn modal-trigger">Delete review</button>
-                <p>Click for more info!</p>
+                <p></p>
                 {% else %}
-                <p>Click for more info!</p>
+                <p></p>
                 {% endif %}
+                <p class="cardActionStyling">Click for more info!</p>
 
             </div>
             <div class="card-reveal">
