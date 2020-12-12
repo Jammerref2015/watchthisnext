@@ -82,6 +82,10 @@ body{
     height: 50%;
 }
 
+.editLink{
+    font-size:50%;
+}
+
 .cardInfoStyling{
     color:red;
 }
@@ -118,10 +122,6 @@ body{
     font-family: Nunito, 'Courier New', Courier, monospace;
     font-weight: bold;
     color:#271d1d; 
-}
-
-.editLink{
-    font-size:50%;
 }
 
 .ratingLabel {

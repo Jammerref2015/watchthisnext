@@ -96,15 +96,13 @@
                 <!-- Edit review submit button -->
                 <div class="row">
                     <div class="col s12 center-align">
+                        <a href="{{ url_for('get_movies') }}" class="red btn-large">Cancel</a>
                         <button type="submit" class="btn-large waves-light darken-4 tooltipped" data-position="bottom"
                             data-tooltip="Dont for get your rating!">
-                            Submit </button>
-                        <button type="submit" class="btn-large waves-light darken-4 tooltipped" data-position="bottom"
-                            data-tooltip="Dont for get your rating!">
-                            Submit </button>
+                            Submit </button>     
                     </div>
                 </div>
             </form>
         </div>
-    </div>
+</div>
     {% endblock %}
