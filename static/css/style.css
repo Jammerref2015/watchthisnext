@@ -189,6 +189,14 @@ body{
     font-size:160%;
 }
 
+/* Styling for movie not found */
+.movieNotFoundLinks{
+    font-family: Nunito;
+    font-weight: bold;
+    list-style-type:none;
+}
+
+
 /* Styling for star rating system. */ 
 .stars {
     display: inline-block;
