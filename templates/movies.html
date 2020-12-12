@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col s12 m12 l12 center">
             <h1 class="headerStyling"> Watch this next.</h1>
-            <h4 class="headerStyling">The movie database. Need content here.</h4>
+            <h4 class="headerStyling">The movie database. See a good movie add a review!</h4>
         </div>
     </div>
     <!-- Search bar -->
@@ -90,6 +90,15 @@
                     <p></p>
                     {% endif %}
 
+                    {% if session.user == "admin"|lower %}
+                    <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" class="editLink">Edit Review</a>
+
+                    <!-- Modal appears when user clicks on delete movie review.-->
+                    <!-- Modal Trigger -->
+                    <button data-target="modal1" class="btn modal-trigger">Delete review</button>
+                    {% else %}
+                    <p></p>
+                    {% endif %}
                 </div>
             </div>
 

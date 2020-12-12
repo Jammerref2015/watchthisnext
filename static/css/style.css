@@ -66,6 +66,7 @@ body{
     color: #fff;
     font-size:150%;
     }
+    
 }
 
 /* CARD STYLING */
@@ -106,8 +107,7 @@ body{
 
 
 /* Styling for add movie review form */
-.addMovieForm {
-    border-radius: 2%;   
+.addMovieForm {  
     font-family:  'Courier New', Courier, monospace; 
     background-color: #e8f0fe;    
 }
@@ -118,6 +118,10 @@ body{
     font-family: Nunito, 'Courier New', Courier, monospace;
     font-weight: bold;
     color:#271d1d; 
+}
+
+.editLink{
+    font-size:50%;
 }
 
 .ratingLabel {
