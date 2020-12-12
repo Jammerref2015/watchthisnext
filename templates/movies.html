@@ -26,9 +26,14 @@
                     <button type="submit" class="light-blue darken-1 btn searchStyling">Enter</button>
                 </div>
                 {% else %}
+                
                 <div class="col s12 center">
                     <h4>Review not found!</h4>
+                    {% if session.user  %}
                     <li><a href="{{ url_for('addmovie') }}">Click here to add a review.</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('register') }}">Sign up and create a review!</a></li>
+                    {% endif %}
                 </div>
                 {% endif %}
             </div>
