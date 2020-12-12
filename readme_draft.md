@@ -289,7 +289,7 @@ The website is hosted via [GitHub](https://github.com/), with the source code be
 ### How To Access It
 - In order to run this project locally you should follow these steps:
 
-    1. Click the green *'clone or download'* button in the [GitHub repository](https://github.com/gaspar91/FeedMe) for the project.
+    1. Click the green *'clone or download'* button in the [GitHub repository](https://github.com/Jammerref2015/watchthisnext) for the project.
 
     2. Copy the link provided by clicking the **clipboard button** to the right of the link.
 
@@ -304,39 +304,22 @@ The website is hosted via [GitHub](https://github.com/), with the source code be
     6. If you don't have it yet, create a free account on [MongoDB](https://mongodb.com/) and create a new Database called **Database3**.
 
     7. Then create the following collections in that Database:
-        - **categories**
+        - **movies**
             - **_id:**< ObjectId >
-            - **category_name:**< string >
-            - **category_image:**< string >
-        
-        - **difficulty**
-            - **_id:**< ObjectId >
-            - **level:**< string >
-        
-        - **recipes**
-            - **_id:**< ObjectId >
-            - **category_name:**< string >
-            - **recipe_name:**< string >
-            - **recipe_description:**< string >
-            - **recipe_ingredients:**< string >
-            - **recipe_method:**< string >
-            - **recipe_image:**< string >
-            - **time:**< string >
-            - **difficulty:**< string >
+            - **title:**< string >
+            - **synopsis:**< string >
+            - **genre:**< string >
+            - **platform:**< string >
+            - **rating:**< string >
+            - **release_year:**< string >
+            - **age_rating:**< string >
+            - **movie_image:**< string >
             - **created_by:**< string >
-        
-        - **difficulty**
-            - **_id:**< ObjectId >
-            - **tool_name:**< string >
-            - **tool_description:**< string >
-            - **tool_details:**< string >
-            - **tool_image:**< string >
         
         - **users**
             - **_id:**< ObjectId >
             - **username:**< string >
             - **password:**< string >
-            - **email:**< string >
     
     8. You should now be able to run this application locally by typing **flask run**.
 
@@ -390,3 +373,13 @@ The website is hosted via [GitHub](https://github.com/), with the source code be
 - Thanks Caterina O'Brian for help in naming the site. 
 - Thanks to my friends and family for endless testing.
 - Big thanks to my mentor for putting up with my questions and giving me great insights.
+
+
+Updates:
+
+12/12/20:
+
+Fixed a an issue that caused
+movie cards to display incorrectly. Changed redirects for edit movie and l
+og to return to home page. Implemented system for randomizing qoutes on lo
+g out. Fixed an error with images when a user's image is 404' 

@@ -1,4 +1,5 @@
 import os
+import random
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -18,6 +19,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+quotes = ['one qoute', 'two qoute','thr=ird== qoute']
 
 @app.route("/")
 @app.route("/get_movies")
@@ -26,9 +28,9 @@ def get_movies():
     return render_template("movies.html", movies=movies)
 
 
-@app.route("/search", methods=["GET", "POST"])
+@app.route("/search")
 def search():
-    query = request.form.get("query")
+    query = request.args.get("query")
     movies = list(mongo.db.movies.find({"$text": {"$search": query}}))
     return render_template("movies.html", movies=movies)
 
@@ -103,7 +105,7 @@ def addmovie():
         }
         mongo.db.movies.insert_one(movie)
         flash("Movie Successfully Added!!!")
-        return redirect(url_for("addmovie"))
+        return redirect(url_for("get_movies"))
 
     return render_template("addmovie.html")
 
@@ -137,6 +139,7 @@ def edit_movie(movie_id):
         }
         mongo.db.movies.update({"_id": ObjectId(movie_id)}, movie)
         flash("Movie Successfully Updated!!!")
+        return redirect(url_for("get_movies"))
 
     movie = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
     return render_template("edit_movie.html", movie=movie)
@@ -144,8 +147,7 @@ def edit_movie(movie_id):
 
 @app.route("/logout")
 def logout():
-    flash("This is Ripley, last survivor of the Nostromo, signing off."
-          "- Ripley from Alien (1979)")
+    flash(quotes[random.randint(0, len(quotes)-1)])
     session.pop("user")
     return redirect(url_for('login'))
 

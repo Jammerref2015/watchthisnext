@@ -14,11 +14,11 @@
     <!-- Search bar -->
 
     <div class="row card-panel grey lighten-5">
-        <form action="{{ url_for('search') }}" method="post" class="col s12">
+        <form action="{{ url_for('search') }}" method="get" class="col s12">
             <div class="row valign-wrapper center-align">
                 {% if movies|length > 0 %}
                 <div class="input-field col s12 m8 searchQuery">
-                    <input type="text" name="query" id="query" minlength="3" class="validate">
+                    <input type="text" name="query" id="query" minlength="3" maxlength="20" class="validate" value="{{ request.args.get('query',) }}">
                     <label for="query">Search by title, genre or release year. </label>
                 </div>
                 <div class="col s12 m4">
@@ -48,15 +48,13 @@
             <div class="card ">
                 <div class="card-image cardImageStyling">
                     <!-- Placeholder image if user does not submit one. Need to look for 404 also. -->
-                    {% if movie.movie_image == "" %}
+                    
+                    
+            
                     <a href="{{url_for('movie', movie_id=movie._id)}}">
-                        <img src="{{url_for('static', filename='images/No_poster_image.jpg')}}"
-                            alt="{{movie.title}}" /></a>
-                    {% else %}
-                    <a href="{{url_for('movie', movie_id=movie._id)}}">
-                        <img src="{{ movie.movie_image }}" alt="movie poster image"> </a>
+                        <img src="{{ movie.movie_image }}" onerror="this.onerror=null; this.src='/static/images/No_poster_image.jpg'" alt="{{ movie.title }}"> </a>
                     <span class="card-title"></span>
-                    {% endif %}
+                    
                 </div><!-- card-image -->
 
 
