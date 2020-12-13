@@ -19,7 +19,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-quotes = ['one qoute', 'two qoute','thr=ird== qoute']
+
+quotes = ['one qoute',
+          'two qoute',
+          'thr=ird== qoute']
+
 
 @app.route("/")
 @app.route("/get_movies")
@@ -53,6 +57,7 @@ def register():
 
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        return redirect(url_for("get_movies"))
     return render_template("register.html")
 
 
