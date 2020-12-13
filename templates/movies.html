@@ -18,8 +18,8 @@
             <div class="row valign-wrapper center-align">
                 {% if movies|length > 0 %}
                 <div class="input-field col s12 m8 searchQuery">
-                    <input type="text" name="query" id="query" minlength="3" maxlength="20" class="validate" value="{{ request.args.get('query',) }}">
-                    <label for="query">Search by title, genre or release year. </label>
+                    <input type="text" name="query" id="query" minlength="1" maxlength="20" class="validate" value="{{ request.args.get('query',) }}">
+                    <label for="query">Search by title... </label>
                 </div>
                 <div class="col s12 m4">
                     <a href="{{ url_for('get_movies') }}" class="red btn">Reset</a>
