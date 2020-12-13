@@ -9,8 +9,13 @@
         <h3 class="headerStyling">{{ movie.release_year}}</h3>
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-                                       <img src="{{ movie.movie_image }}" onerror="this.onerror=null; this.src='/static/images/No_poster_image.jpg'" alt="{{ movie.title }}"> </a>
+                <!-- Check to see if movie has a poster uploaded. -->
+                
+                                        <img class="activator" src="{{ movie.movie_image }}" onerror="this.onerror=null; this.src='/static/images/No_poster_image.jpg'" alt="{{ movie.title }}"> </a>
 
+
+                
+                
             </div>
             <div class="card-content">
                 <!-- Allow creator of a review to delete review. -->
