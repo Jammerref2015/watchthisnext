@@ -148,6 +148,14 @@ body{
   background-color: rgba(121, 85, 72, 0.65);
 }
 
+/* styling for login / register links on home page */
+.regSigninLinks{
+    list-style-type:none;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-size: 160%;
+    color:#fff;
+}
+
 
 /* Log in page styling */
 .forgotPassword {

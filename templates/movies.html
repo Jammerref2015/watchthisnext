@@ -11,6 +11,20 @@
             <h4 class="headerStyling">The movie database. See a good movie? Add a review and let your friends know!</h4>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col s12 m12 l12 center">
+            {% if session.user %}
+            <p></p>
+            {% else %}
+            <li class="regSigninLinks"><a href="{{ url_for('login') }}" >Log In /</a>
+            <a href="{{ url_for('register') }}" >Register</a></li>
+            {% endif %}
+        </div>
+    </div>
+
+
+
     <!-- Search bar -->
 
     <div class="row card-panel grey lighten-5">
@@ -48,14 +62,11 @@
             <div class="card ">
                 <div class="card-image cardImageStyling">
                     <!-- Placeholder image if user does not submit one. Need to look for 404 also. -->
-                    
-                    
-            
                     <a href="{{url_for('movie', movie_id=movie._id)}}">
                         <img src="{{ movie.movie_image }}" onerror="this.onerror=null; this.src='/static/images/No_poster_image.jpg'" alt="{{ movie.title }}"> </a>
                     <span class="card-title"></span>
                     
-                </div><!-- card-image -->
+                </div>
 
 
                 <div class="card-content cardContentStyling">
