@@ -41,10 +41,28 @@ body{
 /* Header styling */
 .headerStyling{
     text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
-    font-family: Nunito;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 5%;
+}
+
+.movieInfoText{
+    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
+    font-family: Nunito, 'Courier New', Courier, monospace;
     font-weight: bold;
     color: #fff;
 }
+
+.movieInfoText a{
+    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-left: 51%;
+    color: #ce122d;
+    font-size: 130%;
+}
+
 
 /* Styling to fix display on mobile devices */
 @media only screen and (max-width: 1024px) {
@@ -65,7 +83,31 @@ body{
     font-weight: bold;
     color: #fff;
     font-size:150%;
+    
     }
+ .headerStyling a {
+    font-weight: bold;
+    color: #fff;
+    margin-left: 48%;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-size: 120%;
+}
+
+.movieInfoText{
+    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #fff;
+}
+
+.movieInfoText a{
+    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-left: 48%;
+    color: #ce122d;
+    font-size: 130%;
+}
     
 }
 
@@ -117,7 +159,6 @@ body{
     font-family:  'Courier New', Courier, monospace; 
     background-color: #e8f0fe;    
 }
-
 
 .input-field label{
     font-size:170%;
@@ -198,6 +239,8 @@ body{
     font-weight:bold;
     font-size:160%;
 }
+
+
 
 /* Styling for movie not found */
 .movieNotFoundLinks{

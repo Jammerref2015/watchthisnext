@@ -19,7 +19,7 @@
                 <!-- Movie title-->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Name of the movie." value="{{ movie.title }}" class="title" id="title"
+                        <input placeholder="Name of the movie." minlength="2" maxlength="24" value="{{ movie.title }}" class="title" id="title"
                             type="text" name="title" required />
                         <label for="title">Title</label>
                     </div>
@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <textarea class="materialize-textarea synopsis" id="synopsis" type="text" name="synopsis"
-                            minlength="5" maxlength="240" required> {{- movie.synopsis -}} </textarea>
+                            minlength="20" maxlength="240" required> {{- movie.synopsis -}} </textarea>
                         <label for="synopsis">Synopsis</label>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="Genre! Is it a Comedy? Horror? Drama?" value="{{ movie.genre }}"
-                            class="genre" id="genre" type="text" name="genre" minlength="5" maxlength="30" required />
+                            class="genre" id="genre" type="text" name="genre" minlength="5" maxlength="20" required />
                         <label for="genre">Genre</label>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="What platform did you see the movie on? Netflix? DVD?"
-                            value="{{ movie.platform }}" class="platform" id="platform" type="text" name="platform" />
+                            value="{{ movie.platform }}" class="platform" id="platform" type="text" name="platform" minlength="3" maxlength="10" required />
                         <label for="platform">Platform</label>
                     </div>
                 </div>
@@ -69,19 +69,19 @@
                         </div>
                     </div>
                 </div>
-                <!-- Release year-->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" name="release_year" value=" {{ movie.release_year }}" class="datepicker"
-                            placeholder="When was the movie released?">
-                        <label for="release_year">Release Year</label>
-                    </div>
+                 <!-- Release year-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="What year was the movie released?" value="{{ movie.release_year }}" class="release_year"
+                            id="release_year" type="text" name="release_year" minlength="2" maxlength="4" required />
+                    <label for="release_year">Release Year</label>
                 </div>
+            </div>
                 <!-- Age rating -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="What age rating does the movie have?" value="{{ movie.age_rating }}"
-                            class="age_rating" id="age_rating" type="text" name="age_rating" />
+                            class="age_rating" id="age_rating" type="text" name="age_rating" minlength="2" maxlength="4" required />
                         <label for="age_rating">Age Rating</label>
                     </div>
                 </div>

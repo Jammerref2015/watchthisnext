@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <textarea value="" class="materialize-textarea synopsis" id="synopsis" type="text"
-                            name="synopsis" minlength="5" maxlength="240" required> </textarea>
+                            name="synopsis" minlength="20" maxlength="240" required></textarea>
                     <label for="synopsis">Synopsis</label>
                 </div>
             </div>
@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <input placeholder="Genre! Is it a Comedy? Horror? Drama?" value="" class="genre" id="genre"
-                            type="text" name="genre" minlength="5" maxlength="30" required />
+                            type="text" name="genre" minlength="5" maxlength="20" required />
                     <label for="genre">Genre</label>
                 </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <input placeholder="What platform did you see the movie on? Netflix? DVD?" value=""
-                            class="platform" id="platform" type="text" name="platform" />
+                            class="platform" id="platform" minlength="3" maxlength="10" type="text" name="platform" required/>
                     <label for="platform">Platform</label>
                 </div>
             </div>
@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <input placeholder="What year was the movie released?" value="" class="release_year"
-                            id="release_year" type="text" name="release_year" maxlength="4" required />
+                            id="release_year" type="text" name="release_year" minlength="2" maxlength="4" required />
                     <label for="release_year">Release Year</label>
                 </div>
             </div>

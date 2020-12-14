@@ -4,10 +4,15 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
 
 <div class="row">
+<div class="col s12 m7">
+            <p class="movieInfoText"> Click on image for more info! <a href="{{ url_for('get_movies') }}" class="movieHomeLink">Home</a> </p>
+</div>
     <div class="col s12 m7">
         <h1 class="headerStyling">{{ movie.title }}</h1>
         <h3 class="headerStyling">{{ movie.release_year}}</h3>
+        
         <div class="card">
+            
             <div class="card-image waves-effect waves-block waves-light">
                 
             <img class="activator" src="{{ movie.movie_image }}" onerror="this.onerror=null; this.src='/static/images/No_poster_image.jpg'" alt="{{ movie.title }}"> </a>
