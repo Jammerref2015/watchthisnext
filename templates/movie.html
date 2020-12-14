@@ -19,16 +19,16 @@
 
             </div>
             <div class="card-content">
-                <!-- Allow creator of a review to delete review. -->
+                <!-- Allow creator of a review to delete review(movie). -->
                 {% if session.user == movie.created_by %}
-                <a href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit Review</a>
+                <a href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit Movie</a>
                 <!-- Modal appears when user clicks on delete movie review.-->
                 <!-- Modal Trigger -->
-                <button data-target="modal1" class="btn modal-trigger">Delete review</button>
+                <button data-target="modal1" class="btn modal-trigger">Delete Movie</button>
                 <!-- Modal Structure -->
                 <div id="modal1" class="modal">
                     <div class="modal-content">
-                        <h4>Are you sure you want to delete your review? </h4>
+                        <h4>Are you sure you want to delete your movie? </h4>
                         <p>Another movie qoute?!?</p>
                     </div>
                     <div class="modal-footer">

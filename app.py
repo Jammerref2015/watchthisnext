@@ -20,9 +20,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-quotes = ['one qoute',
-          'two qoute',
-          'thr=ird== qoute']
+logOutQuotes = ['This is Ripley, last survivor of the Nostromo, signing off.',
+                'After all, tomorrow is another day.',
+                'Roads? Where were going, we dont need roads!',
+                "I'll be right here.",
+                "Alright Mr DeMille, I'm ready for my closeup."
+                ]
 
 
 @app.route("/")
@@ -152,7 +155,7 @@ def edit_movie(movie_id):
 
 @app.route("/logout")
 def logout():
-    flash(quotes[random.randint(0, len(quotes)-1)])
+    flash(logOutQuotes[random.randint(0, len(logOutQuotes)-1)])
     session.pop("user")
     return redirect(url_for('login'))
 
