@@ -64,52 +64,6 @@ body{
 }
 
 
-/* Styling to fix display on mobile devices */
-@media only screen and (max-width: 1024px) {
-   .navStyle a {
-    color:#e3122d;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-    font-size: 80%;
-}
-  .searchStyling{
-    margin-top:20%;  
-    }
-  .searchQuery{
-    font-size:70%;
-    }  
-  .headerStyling{
-    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
-    font-family: Nunito;
-    font-weight: bold;
-    color: #fff;
-    font-size:150%;
-    
-    }
- .headerStyling a {
-    font-weight: bold;
-    color: #fff;
-    margin-left: 48%;
-    font-family: Nunito, 'Courier New', Courier, monospace;
-    font-size: 120%;
-}
-
-.movieInfoText{
-    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
-    font-family: Nunito, 'Courier New', Courier, monospace;
-    font-weight: bold;
-    color: #fff;
-}
-
-.movieInfoText a{
-    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
-    font-family: Nunito, 'Courier New', Courier, monospace;
-    font-weight: bold;
-    margin-left: 48%;
-    color: #ce122d;
-    font-size: 130%;
-}
-    
-}
 
 /* CARD STYLING */
 .cardContentStyling {
@@ -197,15 +151,21 @@ body{
     color:#fff;
 }
 
+.regSigninLinks a{
+    list-style-type:none;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-size: 160%;
+    color:#fff;
+}
 
 /* Log in page styling */
-.forgotPassword {
+.linkToRegister {
     list-style-type:none;
     font-family: Nunito, 'Courier New', Courier, monospace;
     font-size:120%;
 }
 
-.forgotPassword a{
+.linkToRegister a{
     font-weight:bold;
     color:red;
 }
@@ -322,3 +282,62 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top
     font-size:150%;
 }
 
+/* Styling to fix display on mobile devices */
+@media only screen and (max-width: 1024px) {
+
+.cardImageStyling {
+    width: 100%;
+    overflow: hidden;
+    height: 287px;
+}
+
+.cardActionStyling {
+    text-align: center;
+    font-size: 179%;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    height: 100px;
+}
+   .navStyle a {
+    color:#e3122d;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-size: 60%;
+}
+  .searchStyling{
+    margin-top:20%;  
+    }
+  .searchQuery{
+    font-size:70%;
+    }  
+  .headerStyling{
+    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
+    font-family: Nunito;
+    font-weight: bold;
+    color: #fff;
+    font-size:150%;
+    
+    }
+ .headerStyling a {
+    font-weight: bold;
+    color: #fff;
+    margin-left: 48%;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-size: 120%;
+}
+
+.movieInfoText{
+    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #fff;
+}
+
+.movieInfoText a{
+    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-left: 48%;
+    color: #ce122d;
+    font-size: 130%;
+ }   
+}
