@@ -291,7 +291,7 @@ Balsamiq was used for wireframing. This produced some basic wireframes, which we
 
 -  [Heroku](https://dashboard.heroku.com/apps) - A cloud platform used to deploy the web application.
 
--  [Canva](https://www.canva.com/) - Graphic Design Platform used in creating the logo and favicon.
+-  [imagecompressor](https://imagecompressor.com/) - Used to compress placeholder image.
 
   
   
@@ -513,7 +513,6 @@ The website is hosted via [GitHub](https://github.com/), with the source code be
 
 - Star rating on forms uses adapted code orginally obtained from [codeconvey](https://codeconvey.com/css-star-rating-radio-buttons/)
 
-  
 
 ### Media :clapper:
 
@@ -523,7 +522,7 @@ The website is hosted via [GitHub](https://github.com/), with the source code be
 
 - Orginal 'Doc Brown' image used in the image upload helper modal obtained from (https://media.fromthegrapevine.com/assets/images/2017/5/dr-emmett-brown.jpg.824x0_q71.jpg)
 
-  
+- Orginal royalty free placeholder image from vectorstock.com juice and popcorn for movie night poster vector 20220730
 
 ### Acknowledgements
 
