@@ -1,9 +1,7 @@
 $(document).ready(function(){
-  $('.sidenav').sidenav();
-  $('.modal').modal();
-  $('select').formSelect();
-  $('.tooltipped').tooltip();
-  $('.carousel').carousel();
+  $('.sidenav').sidenav(); // jQuery for side menu on mobile devices
+  $('.modal').modal();     // jQuery to initate modal pop ups
+  $('.tooltipped').tooltip(); // jQuery to tooltip on edit review page reminding user to add rating. 
 });
 
 

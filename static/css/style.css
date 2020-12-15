@@ -1,6 +1,5 @@
 /* Font imports */ 
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
 @font-face {
     font-family: 'amity_jackregular';
     src: url('/static/fonts/amity_jack/amity_jack-webfont.woff2') format('woff2'),
@@ -15,7 +14,6 @@ body{
     font-family: arial, 'Courier New', Courier, monospace;
     background-color:#384345;
 }
-
 /* Styling for materialize flash messages */
 .flashStyling {
     background:none;
@@ -25,7 +23,6 @@ body{
     font-weight: bold;
     color:#fff;
 }
-
 /* Nav styling */ 
 .navStyle {
     background-color: #617478;
@@ -46,14 +43,12 @@ body{
     color: #fff;
     margin-top: 5%;
 }
-
 .movieInfoText{
     text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
     font-family: Nunito, 'Courier New', Courier, monospace;
     font-weight: bold;
     color: #fff;
 }
-
 .movieInfoText a{
     text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
     font-family: Nunito, 'Courier New', Courier, monospace;
@@ -63,8 +58,6 @@ body{
     font-size: 130%;
 }
 
-
-
 /* CARD STYLING */
 .cardContentStyling {
     font-family: Nunito;
@@ -72,20 +65,16 @@ body{
     list-style-type:none;
     text-align:center;
 }
-
 .movie-image{
     width: 100%;
     height: 50%;
 }
-
 .editLink{
     font-size:50%;
 }
-
 .cardInfoStyling{
     color:red;
 }
-
 .cardActionStyling {
     text-align:center;
     font-size:170%;
@@ -94,19 +83,17 @@ body{
     height: 70px;
 }
 
-
-
-/* Prevent displaying URL for posters/images */ 
-.hidePosterURL{
-    display: none;
-}
-
 .cardImageStyling {
     width:100%;
     height: 500px;
     overflow: hidden;
 }
 
+
+/* Prevent displaying URL for posters/images */ 
+.hidePosterURL{
+    display: none;
+}
 
 /* Styling for add movie review form */
 .addMovieForm {  
@@ -185,21 +172,17 @@ body{
     font-weight:bold;
     font-size:160%;
 }
-
 .movieDetailStyling ul {
     padding:5%;   
 }
-
 .movieDetailStyling ul li {
     margin-top:5%;   
 }
-
 .titleHeading {
     font-family: Nunito, 'Courier New', Courier, monospace;
     font-weight:bold;
     font-size:160%;
 }
-
 
 
 /* Styling for movie not found */
@@ -215,11 +198,9 @@ body{
 .stars {
     display: inline-block;
 }
-
 .stars input {
     display: none;
 }
-
 .stars label {
     float: right;
     padding: 2px;
@@ -227,20 +208,16 @@ body{
     color: #170e0e;
     transition: all .2s;
 }
-
 .stars label:before {
     content: '\2605';
 }
-
 .stars input:checked ~ label:before {
     color: gold;
     transition: all .25s;
 }
-
 .stars label:hover {
     transform: scale(1.3);
 }
-
 
 /* 
 Button appears on home page allowing user to scroll back to the top of the page. 
@@ -269,12 +246,10 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top
 }
 
 /* Footer */
-
 .footerBg{
     background-color:#617478;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
-
 .socialLinks{
     font-family: Nunito;
     font-weight: bold;
@@ -284,13 +259,11 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top
 
 /* Styling to fix display on mobile devices */
 @media only screen and (max-width: 1024px) {
-
 .cardImageStyling {
     width: 100%;
     overflow: hidden;
     height: 287px;
 }
-
 .cardActionStyling {
     text-align: center;
     font-size: 179%;

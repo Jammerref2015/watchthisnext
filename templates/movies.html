@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- home page. aka movies page-->
+
 <!-- Button appears when user starts scrolling allowing you return to the top of the page. -->
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-
 
 <div class="container">
     <div class="row">
@@ -13,6 +14,7 @@
     </div>
 
     <div class="row">
+        <!-- Links at the top of the page. Depending on user logged in/out -->
         <div class="col s12 m12 l12 center">
             {% if session.user %}
             <li class="regSigninLinks"><a href="{{ url_for('addmovie') }}">Add movie!</a></li>
@@ -22,11 +24,7 @@
             {% endif %}
         </div>
     </div>
-
-
-
     <!-- Search bar -->
-
     <div class="row card-panel grey lighten-5">
         <form action="{{ url_for('search') }}" method="get" class="col s12">
             <div class="row valign-wrapper center-align">
@@ -41,11 +39,12 @@
                 </div>
                 {% else %}
                 <div class="col s12 center movieNotFoundLinks">
-                    <h4>Review not found!</h4>
+                    <!-- Movie not found notice with links available depending on user logged in/out-->
+                    <h4>Movie not found!</h4>
                     {% if session.user  %}
-                    <li><a href="{{ url_for('addmovie') }}">Click here to add a review.</a></li>
+                    <li><a href="{{ url_for('addmovie') }}">Click here to add a movie.</a></li>
                     {% else %}
-                    <li><a href="{{ url_for('register') }}">Sign up and create a review!</a></li>
+                    <li><a href="{{ url_for('register') }}">Sign up and create a movie!</a></li>
                     {% endif %}
                 </div>
                 {% endif %}
@@ -53,37 +52,31 @@
         </form>
     </div>
 
-
     <!-- Display movie reviews in materialize cards-->
     <div class="row">
         {% for movie in movies %}
+        <!-- each movie card added is generated in its own column -->
         <div class="col l6">
-
             <div class="card ">
                 <div class="card-image cardImageStyling">
-                    <!-- Placeholder image if user does not submit one. Need to look for 404 also. -->
+                    <!-- Placeholder image if user does not submit one or is 404 -->
                     <a href="{{url_for('movie', movie_id=movie._id)}}">
                         <img src="{{ movie.movie_image }}" onerror="this.onerror=null; this.src='/static/images/No_poster_image.jpg'" alt="{{ movie.title }}"> </a>
-                    <span class="card-title"></span>
-                    
+                    <span class="card-title"></span>  
                 </div>
-
-
                 <div class="card-content cardContentStyling">
                     <li>
                         <p>Title: {{ movie.title}}</p>
                         <p>Review by: {{ movie.created_by}}</p>
                         <p>Your rating: {{ movie.rating }} Stars</p>
-                        <!-- Add CSS to prevent displaying URL -->
+                        <!-- CSS to prevent displaying URL -->
                         <p class="hidePosterURL">{{ movie.movie_image}}</p>
                     </li>
-                </div><!-- Card content -->
-
+                </div>
                 <div class="card-action cardActionStyling">
-                    <!-- Allow creator of a review to delete review. -->
+                    <!-- Allow creator of a review (or admin) to delete review. -->
                     {% if session.user == movie.created_by %}
                     <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" class="editLink">Edit Review</a>
-
                     <!-- Modal appears when user clicks on delete movie review.-->
                     <!-- Modal Trigger -->
                     <button data-target="modal1" class="btn modal-trigger">Delete review</button>
@@ -92,20 +85,18 @@
                 <div id="modal1" class="modal">
                     <div class="modal-content">
                         <h4>Are you sure you want to delete? </h4>
-                        <p>Another movie qoute?!?</p>
-                    </div><!-- Modal-content -->
+                    </div>
                     <div class="modal-footer">
                         <a href="#!" class="modal-close waves-effect waves-green btn-flat">No</a>
                         <a href="{{ url_for('delete_movie', movie_id=movie._id) }}"
                             class="modal-close waves-effect waves-green btn-flat">Yes</a>
-                    </div><!-- modal-footer -->
+                    </div>
                     {% else %}
                     <p></p>
                     {% endif %}
-
+                    <!-- Allow admin to access edit/delete features for all cards -->
                     {% if session.user == "admin"|lower %}
                     <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" class="editLink">Edit Review</a>
-
                     <!-- Modal appears when user clicks on delete movie review.-->
                     <!-- Modal Trigger -->
                     <button data-target="modal1" class="btn modal-trigger">Delete review</button>
@@ -115,10 +106,8 @@
                 </div>
             </div>
 
-        </div><!-- Col -->
+        </div>
         {% endfor %}
-    </div><!-- Row -->
-
-
-</div><!-- Container -->
+    </div>
+</div>
 {% endblock %}

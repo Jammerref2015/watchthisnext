@@ -19,7 +19,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+# Quotes from movies randomised from this list
 logOutQuotes = ['This is Ripley, last survivor of the Nostromo, signing off.',
                 'After all, tomorrow is another day.',
                 'Roads? Where were going, we dont need roads!',
