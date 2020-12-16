@@ -293,21 +293,11 @@ Balsamiq was used for wireframing. This produced some basic wireframes, which we
 
 -  [imagecompressor](https://imagecompressor.com/) - Used to compress placeholder image.
 
-  
-  
 -  [StackEdit](https://stackedit.io/) -  Markdown editor used to create the readme and testing markdown.
   
-  
-
-*  [Git](https://git-scm.com/)
+- [Git](https://git-scm.com/)
 
 
-
-*  [Am I responsive](http://ami.responsivedesign.is/Responsive)
-
-*  [imagecompressor](https://imagecompressor.com/)
-
-  
 
 ## Testing
 
