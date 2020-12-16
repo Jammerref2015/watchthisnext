@@ -8,22 +8,12 @@
 <div class="container">
     <div class="row">
         <div class="col s12 m12 l12 center">
-            <h1 class="headerStyling"> Watch this next.</h1>
-            <h4 class="headerStyling">The movie database. Seen a good movie? Add a review and share with the world!</h4>
+            <h1 class="headerStyling"> Watch this next - The movie database</h1>
+            
+            <h4 class="headerStyling">Looking for a good movie to watch? You can search by title or genre! </h4>
         </div>
     </div>
 
-    <div class="row">
-        <!-- Links at the top of the page. Depending on user logged in/out -->
-        <div class="col s12 m12 l12 center">
-            {% if session.user %}
-            <li class="regSigninLinks"><a href="{{ url_for('addmovie') }}">Add  a movie!</a></li>
-            {% else %}
-            <li class="regSigninLinks"><a href="{{ url_for('login') }}" >Log In /</a>
-            <a href="{{ url_for('register') }}" >Register</a></li>
-            {% endif %}
-        </div>
-    </div>
     <!-- Search bar -->
     <div class="row card-panel grey lighten-5">
         <form action="{{ url_for('search') }}" method="get" class="col s12">
@@ -31,7 +21,7 @@
                 {% if movies|length > 0 %}
                 <div class="input-field col s12 m8 searchQuery">
                     <input type="text" name="query" id="query" minlength="4" maxlength="20" class="validate" value="{{ request.args.get('query',) }}" required>
-                    <label for="query">Search by title... </label>
+                    <label for="query">Search </label>
                 </div>
                 <div class="col s12 m4">
                     <a href="{{ url_for('get_movies') }}" class="red btn">Reset</a>
@@ -51,7 +41,22 @@
             </div>
         </form>
     </div>
-
+    <div class="row">
+        <!-- Links at the top of the page. Depending on user logged in/out -->
+        <div class="col s12 m12 l12 center">
+            {% if session.user %}
+            <li class="regSigninLinks"><a href="{{ url_for('addmovie') }}">Add  a movie!</a></li>
+            {% else %}
+            <li class="regSigninLinks"><a href="{{ url_for('login') }}" >Log In /</a>
+            <a href="{{ url_for('register') }}" >Register</a></li>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m12 l12 center">
+            <h4 class="headerStyling">Movie is not in the database? Sign up and share it with the world!</h4>
+        </div>
+    </div>
     <!-- Display movie reviews in materialize cards-->
     <div class="row">
         {% for movie in movies %}
