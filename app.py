@@ -19,13 +19,15 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-# Quotes from movies randomised from this list
-logOutQuotes = ['This is Ripley, last survivor of the Nostromo, signing off.',
-                'After all, tomorrow is another day.',
-                'Roads? Where were going, we dont need roads!',
-                "I'll be right here.",
-                "Alright Mr DeMille, I'm ready for my closeup."
-                ]
+# Quotes from movies randomised from this list. Displayed at random on log in.
+quotes = [' "Do ya feel lucky? Well, do ya, punk". - Dirty Harry (1971)',
+          '"May the force be with you." - Star Wars (1977)',
+          '“I feel the need – the need for speed” - Top Gun (1986)',
+          " 'I'll be right here'. - E.T. (1982)",
+          '"Yippe-ki-yi-yay, Motherf**ker" - Die Hard (1988)',
+          ' “At my signal, unleash hell” - Gladiator (2000)',
+          " We're gonna need a bigger boat.' - Jaws (1977)"
+        ]
 
 
 @app.route("/")
@@ -75,6 +77,7 @@ def login():
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
+                flash(quotes[random.randint(0, len(quotes)-1)])
                 return redirect(url_for('get_movies',
                                         username=session["user"]))
             else:
@@ -121,7 +124,7 @@ def addmovie():
 @app.route("/delete_movie/<movie_id>")
 def delete_movie(movie_id):
     mongo.db.movies.delete_one({"_id": ObjectId(movie_id)})
-    flash("Here's looking at you kid. (Casablanca - 1942)")
+    flash("Movie successfully deleted!")
     return redirect(url_for("get_movies"))
 
 
@@ -146,7 +149,7 @@ def edit_movie(movie_id):
             "created_by": session["user"]
         }
         mongo.db.movies.update({"_id": ObjectId(movie_id)}, movie)
-        flash("Movie Successfully Updated!!!")
+        flash('Movie successfully edited!')
         return redirect(url_for("get_movies"))
 
     movie = mongo.db.movies.find_one({"_id": ObjectId(movie_id)})
@@ -155,7 +158,7 @@ def edit_movie(movie_id):
 
 @app.route("/logout")
 def logout():
-    flash(logOutQuotes[random.randint(0, len(logOutQuotes)-1)])
+    flash('You have successfully logged out.')
     session.pop("user")
     return redirect(url_for('login'))
 

@@ -17,7 +17,7 @@
         <!-- Links at the top of the page. Depending on user logged in/out -->
         <div class="col s12 m12 l12 center">
             {% if session.user %}
-            <li class="regSigninLinks"><a href="{{ url_for('addmovie') }}">Add movie!</a></li>
+            <li class="regSigninLinks"><a href="{{ url_for('addmovie') }}">Add  a movie!</a></li>
             {% else %}
             <li class="regSigninLinks"><a href="{{ url_for('login') }}" >Log In /</a>
             <a href="{{ url_for('register') }}" >Register</a></li>
