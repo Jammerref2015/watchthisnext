@@ -4,30 +4,31 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
 
 <div class="row">
-<div class="col s12 m7">
-    <p class="movieInfoText"> Click on image for more info! <a href="{{ url_for('get_movies') }}" class="movieHomeLink">Home</a> </p>
-</div>
+    <div class="col s12 m7">
+        <p class="movieInfoText"> Click on image for more info! <a href="{{ url_for('get_movies') }}"
+                class="movieHomeLink">Home</a> </p>
+    </div>
     <div class="col s12 m7">
         <h1 class="headerStyling">{{ movie.title }}</h1>
         <h3 class="headerStyling">{{ movie.release_year}}</h3>
         <!-- Movie card -->
         <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-            <!-- Provide a placeholder image if user does not submit an image or URL is 404 --> 
-                <img class="activator" src="{{ movie.movie_image }}" onerror="this.onerror=null; this.src='/static/images/No_poster_image.jpg'" alt="{{ movie.title }}"> 
+                <!-- Provide a placeholder image if user does not submit an image or URL is 404 -->
+                <img class="activator" src="{{ movie.movie_image }}"
+                    onerror="this.onerror=null; this.src='/static/images/No_poster_image.jpg'" alt="{{ movie.title }}">
             </div>
             <div class="card-content">
                 <!-- Allow creator of a review to delete review(movie). -->
                 {% if session.user == movie.created_by %}
-                    <a href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit Movie</a>
-                     <!-- Modal appears when user clicks on delete movie review.-->
-                    <!-- Modal Trigger -->
-                    <button data-target="modal1" class="btn modal-trigger">Delete Movie</button>
+                <a href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit Movie</a>
+                <!-- Modal appears when user clicks on delete movie review.-->
+                <!-- Modal Trigger -->
+                <button data-target="modal1" class="btn modal-trigger">Delete Movie</button>
                 <!-- Modal Structure -->
                 <div id="modal1" class="modal">
                     <div class="modal-content">
                         <h4>Are you sure you want to delete your movie? </h4>
-                        <p>Another movie qoute?!?</p>
                     </div>
                     <div class="modal-footer">
                         <a href="#!" class="modal-close waves-effect waves-green btn-flat">No</a>
@@ -41,12 +42,13 @@
                 <!-- Modal appears when user clicks on delete movie review.-->
                 <!-- Modal Trigger -->
                 <a href="{{ url_for('delete_movie', movie_id=movie._id) }}">Delete Review</a>
-                
+
                 {% else %}
                 <!-- Modal footer is blank if not logged in or did not create review(movie) -->
                 <p></p>
                 {% endif %}
-                <p class="cardActionStyling">Click image for more info. <i class="fa fa-arrow-up" aria-hidden="true"></i></p>
+                <p class="cardActionStyling">Click image for more info. <i class="fa fa-arrow-up"
+                        aria-hidden="true"></i></p>
             </div>
             <div class="card-reveal">
                 <span class="card-title titleHeading text-darken-4">{{ movie.title }}<i
