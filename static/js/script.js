@@ -4,7 +4,6 @@ $(document).ready(function(){
   $('.tooltipped').tooltip(); // jQuery to tooltip on edit review page reminding user to add rating. 
 });
 
-
 /* 
 Button appears on home page allowing user to scroll back to the top of the page. 
 Code adapted from: 

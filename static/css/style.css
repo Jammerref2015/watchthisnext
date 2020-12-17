@@ -43,6 +43,16 @@ body{
     color: #fff;
     margin-top: 5%;
 }
+
+.headerStylingTitle{
+    text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 5%;
+}
+
+/* Text on movie cards */
 .movieInfoText{
     text-shadow: 3px 3px 3px rgb(3 2 10 / 90%);
     font-family: Nunito, 'Courier New', Courier, monospace;
@@ -296,6 +306,13 @@ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top
     margin-left: 48%;
     font-family: Nunito, 'Courier New', Courier, monospace;
     font-size: 120%;
+}
+
+ .headerStylingTitle {
+    font-weight: bold;
+    color:#fff;
+    font-family: Nunito, 'Courier New', Courier, monospace;
+    font-size: 224%;
 }
 
 .movieInfoText{
