@@ -38,7 +38,7 @@
                 {% else %}
                 <p></p>
                 {% endif %}
-                {% if session.user == "admin"|lower %}
+                {% if session.user == 'admin'|lower %}
                 <!-- If movie creator is logged in or 'admin the follow links are available -->
                 <a href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit Review</a>
                 <!-- Modal appears when user clicks on delete movie review.-->

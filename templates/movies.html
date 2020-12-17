@@ -9,7 +9,6 @@
     <div class="row">
         <div class="col s12 m12 l12 center">
             <h1 class="headerStylingTitle"> Watch this next - The movie database</h1>
-            
             <h4 class="headerStyling">Looking for a good movie to watch? You can search by title or genre! </h4>
         </div>
     </div>
@@ -20,7 +19,8 @@
             <div class="row valign-wrapper center-align">
                 {% if movies|length > 0 %}
                 <div class="input-field col s12 m8 searchQuery">
-                    <input type="text" name="query" id="query" minlength="4" maxlength="20" class="validate" value="{{ request.args.get('query',) }}" required>
+                    <input type="text" name="query" id="query" minlength="4" maxlength="20" class="validate"
+                        value="{{ request.args.get('query',) }}" required>
                     <label for="query">Search </label>
                 </div>
                 <div class="col s12 m4">
@@ -45,10 +45,10 @@
         <!-- Links at the top of the page. Depending on user logged in/out -->
         <div class="col s12 m12 l12 center">
             {% if session.user %}
-            <li class="regSigninLinks"><a href="{{ url_for('addmovie') }}">Add  a movie!</a></li>
+            <li class="regSigninLinks"><a href="{{ url_for('addmovie') }}">Add a movie!</a></li>
             {% else %}
-            <li class="regSigninLinks"><a href="{{ url_for('login') }}" >Log In /</a>
-            <a href="{{ url_for('register') }}" >Register</a></li>
+            <li class="regSigninLinks"><a href="{{ url_for('login') }}">Log In /</a>
+                <a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
         </div>
     </div>
@@ -66,8 +66,10 @@
                 <div class="card-image cardImageStyling">
                     <!-- Placeholder image if user does not submit one or is 404 -->
                     <a href="{{url_for('movie', movie_id=movie._id)}}">
-                        <img src="{{ movie.movie_image }}" onerror="this.onerror=null; this.src='/static/images/No_poster_image.jpg'" alt="{{ movie.title }}"> </a>
-                    <span class="card-title"></span>  
+                        <img src="{{ movie.movie_image }}"
+                            onerror="this.onerror=null; this.src='/static/images/No_poster_image.jpg'"
+                            alt="{{ movie.title }}"> </a>
+                    <span class="card-title"></span>
                 </div>
                 <div class="card-content cardContentStyling">
                     <li>
@@ -78,6 +80,7 @@
                         <p class="hidePosterURL">{{ movie.movie_image}}</p>
                     </li>
                 </div>
+
                 <div class="card-action cardActionStyling">
                     <!-- Allow creator of a review (or admin) to delete review. -->
                     {% if session.user == movie.created_by %}
@@ -100,11 +103,11 @@
                     <p></p>
                     {% endif %}
                     <!-- Allow admin to access edit/delete features for all cards -->
-                    {% if session.user == "admin"|lower %}
+                    {% if session.user == 'admin'|lower %}
                     <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" class="editLink">Edit Review</a>
                     <!-- Modal appears when user clicks on delete movie review.-->
                     <!-- Modal Trigger -->
-                    <button data-target="modal1" class="btn modal-trigger">Delete review</button>
+                    <a href="{{ url_for('delete_movie', movie_id=movie._id) }}" class="editLink">Delete Review</a>
                     {% else %}
                     <p></p>
                     {% endif %}
