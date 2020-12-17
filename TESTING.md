@@ -512,7 +512,7 @@ This field is optional. The following possible actions can occur:
 
 - Delete modal on desktop currently adds the links to edit and delete reviews to the modal itself. This does not occur on mobile or tablets. 
 
-- On the day of submitting the project a bug was discovered when signed in as 'admin', the button for 'delete movie' was not activating when clicked. A work around solution was to replace the button to open the 'delete movie' modal with a link. Clicking the link resulted in a movie being deleted. Further testing revealed that the last movie to be added does have a delete movie button that opens the modal and deletes the movie if the yes option is seleected. 
+- On the day of submitting the project a bug was discovered when signed in as 'admin', the button for 'delete movie' was not activating when clicked. A work around solution was to replace the button to open the 'delete movie' modal with a link. Clicking the link resulted in a movie being deleted. Further testing revealed that the last movie to be added does have a delete movie button that opens the modal and deletes the movie if the yes option is selected. 
 
 ## Validators
 
