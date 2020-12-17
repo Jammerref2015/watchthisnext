@@ -7,7 +7,7 @@
 
   
 
-![readme image](/assets/images/readme_image.png)
+![readme image](/assets/images/readme_image.jpg)
 
   
 
