@@ -80,7 +80,6 @@
                         <p class="hidePosterURL">{{ movie.movie_image}}</p>
                     </li>
                 </div>
-
                 <div class="card-action cardActionStyling">
                     <!-- Allow creator of a review (or admin) to delete review. -->
                     {% if session.user == movie.created_by %}
@@ -99,11 +98,7 @@
                         <a href="{{ url_for('delete_movie', movie_id=movie._id) }}"
                             class="modal-close waves-effect waves-green btn-flat">Yes</a>
                     </div>
-                    {% else %}
-                    <p></p>
-                    {% endif %}
-                    <!-- Allow admin to access edit/delete features for all cards -->
-                    {% if session.user == 'admin'|lower %}
+                    {% elif session.user == 'admin'|lower %}
                     <a href="{{ url_for('edit_movie', movie_id=movie._id) }}" class="editLink">Edit Review</a>
                     <!-- Modal appears when user clicks on delete movie review.-->
                     <!-- Modal Trigger -->
@@ -111,9 +106,9 @@
                     {% else %}
                     <p></p>
                     {% endif %}
+                    <!-- Allow admin to access edit/delete features for all cards -->
                 </div>
             </div>
-
         </div>
         {% endfor %}
     </div>

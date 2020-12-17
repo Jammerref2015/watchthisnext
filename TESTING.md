@@ -511,7 +511,9 @@ This field is optional. The following possible actions can occur:
 - In recent days there has been an issue regarding a lack of security due to no SSL certificate being attached to the page. This resulted in the following browser warning:  **The information you’re about to submit is not secure. Because the site is using a connection that’s not completely secure, your information will be visible to others.** SSL is only available on a paid Heroku plan. Switching to such a plan would eliminate this issue. Steps have been taken to ensure that confidental elements such as the MONGO_URI string for example are not available to the public (via github). Passwords are also secured using password hashing. 
 
 - Delete modal on desktop currently adds the links to edit and delete reviews to the modal itself. This does not occur on mobile or tablets. 
-  
+
+- On the day of submitting the project a bug was discovered regarding access for 'admin' user. The button for 'delete movie' was not activating. A work around soultion was to replace the button to open the 'delete movie' modal and replace with a link. Clicking the link resulted in a movie being deleted. The modal works for other users.    
+
 ## Validators
 
 ### HTML5

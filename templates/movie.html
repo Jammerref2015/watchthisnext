@@ -35,16 +35,13 @@
                             class="modal-close waves-effect waves-green btn-flat">Yes</a>
                     </div>
                 </div>
-                {% else %}
-                <p></p>
-                {% endif %}
-                {% if session.user == 'admin'|lower %}
+                {% elif session.user == 'admin'|lower %}
                 <!-- If movie creator is logged in or 'admin the follow links are available -->
                 <a href="{{ url_for('edit_movie', movie_id=movie._id) }}">Edit Review</a>
                 <!-- Modal appears when user clicks on delete movie review.-->
                 <!-- Modal Trigger -->
-                <button data-target="modal1" class="btn modal-trigger">Delete review</button>
-                <p></p>
+                <a href="{{ url_for('delete_movie', movie_id=movie._id) }}">Delete Review</a>
+                
                 {% else %}
                 <!-- Modal footer is blank if not logged in or did not create review(movie) -->
                 <p></p>
